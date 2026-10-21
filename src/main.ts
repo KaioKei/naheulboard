@@ -1,17 +1,21 @@
 import './mj/mj.css';
 import './style.css';
+import './maps/maps.css';
 import { AudioEngine } from './audio/AudioEngine';
 import { LibraryError, loadLibrary } from './library/loadLibrary';
+import { AtlasError, loadAtlas } from './maps/loadAtlas';
+import { MapsView } from './maps/MapsView';
 import { mountMjScreen } from './mj/mjScreen';
 import { App } from './ui/App';
 import { el } from './ui/dom';
 
 /**
- * Two halves sharing one page:
+ * Three parts sharing one page:
  *  - the GM screen (characters, triggers, journal, backup);
- *  - the soundboard, in the Musique tab.
+ *  - the soundboard, in the Musique tab;
+ *  - the maps, in the Cartes tab.
  * They do not talk to each other; the shell and its tabs live in index.html.
- * One failing must not take the other down, hence the two try/catch.
+ * One failing must not take the others down, hence one try/catch each.
  */
 function main(): void {
   try {
@@ -26,6 +30,7 @@ function main(): void {
   }
 
   void mountSoundboard();
+  void mountMaps();
 }
 
 async function mountSoundboard(): Promise<void> {
@@ -43,6 +48,21 @@ async function mountSoundboard(): Promise<void> {
   } catch (error) {
     const lines = error instanceof LibraryError ? error.problems : [String(error)];
     reportFatal(view, 'Le soundboard a fait un échec critique 🎲', lines);
+    console.error(error);
+  }
+}
+
+async function mountMaps(): Promise<void> {
+  const view = document.querySelector<HTMLElement>('#v-cartes');
+  if (!view) throw new Error('#v-cartes introuvable dans index.html');
+
+  const base = `${import.meta.env.BASE_URL}maps/`;
+
+  try {
+    new MapsView(view, await loadAtlas(`${base}maps.json`), base);
+  } catch (error) {
+    const lines = error instanceof AtlasError ? error.problems : [String(error)];
+    reportFatal(view, 'Les cartes ne se sont pas dépliées 🎲', lines);
     console.error(error);
   }
 }

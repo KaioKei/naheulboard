@@ -5,7 +5,7 @@
  * The colour tokens and the fonts live here; the soundboard reuses them in
  * src/style.css, which is loaded after this file.
  */
-/* Layout : écran de MJ. Cinq onglets : Personnages (héros, PNJ, ennemis), Déclencheurs, Journal, Musique, Sauvegarde. */
+/* Layout : écran de MJ. Six onglets : Personnages (héros, PNJ, ennemis), Déclencheurs, Journal, Musique, Cartes, Sauvegarde. */
 :root{
   --paper:#ECEFE4; --surface:#F8F9F3; --sunk:#E2E6D7; --ink:#1E2A22; --muted:#56635A; --line:#C7CEBB;
   --accent:#9E600C; --accent-soft:#F2E3C8; --accent-ink:#FFFFFF;

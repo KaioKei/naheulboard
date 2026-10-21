@@ -16,6 +16,7 @@
   them in (see src/main.ts):
     - src/mj/mjScreen.js  → Personnages, Déclencheurs, Journal, Sauvegarde, dialogs
     - src/ui/App.ts       → Musique (the soundboard) and the sound controls in the bar
+    - src/maps/MapsView.ts → Cartes (the maps and their clickable regions)
   The ids come from the original GM screen: do not rename them.
 -->
 <div class="wrap">
@@ -30,6 +31,7 @@
         <button type="button" data-act="view" data-v="trig" aria-current="false">Déclencheurs</button>
         <button type="button" data-act="view" data-v="journal" aria-current="false">Journal</button>
         <button type="button" data-act="view" data-v="musique" aria-current="false">Musique</button>
+        <button type="button" data-act="view" data-v="cartes" aria-current="false">Cartes</button>
         <button type="button" data-act="view" data-v="backup" aria-current="false">Sauvegarde</button>
       </nav>
       <div class="bar-right">
@@ -77,6 +79,9 @@
 
     <!-- Filled by src/ui/App.ts: three columns of pictograms (musiques, ambiances, sons). -->
     <section id="v-musique" hidden></section>
+
+    <!-- Filled by src/maps/MapsView.ts from public/maps/maps.json. -->
+    <section id="v-cartes" hidden></section>
 
     <section id="v-backup" hidden>
       <div class="backup">

@@ -1,0 +1,65 @@
+/* The Cartes tab: menu on the left, map on the right, clickable regions on top.
+   Colours come from the GM screen's palette (src/mj/mj.css). */
+
+.cartes{display:grid;grid-template-columns:minmax(0,230px) minmax(0,1fr);gap:14px;align-items:start}
+
+/* ---------- Menu and search ---------- */
+.carte-menu{display:flex;flex-direction:column;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:10px;position:sticky;top:10px;max-height:calc(100vh - 150px)}
+.carte-q{width:100%;box-sizing:border-box;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:5px 8px;min-width:0}
+.carte-liste{display:flex;flex-direction:column;gap:2px;overflow-y:auto;min-height:0}
+.carte-groupe{margin:6px 0 2px;font-family:var(--f-sc);font-size:12px;letter-spacing:.08em;color:var(--muted);font-weight:700;text-transform:uppercase}
+.carte-entree{display:flex;flex-direction:column;align-items:flex-start;gap:1px;text-align:left;border:1px solid transparent;background:transparent;border-radius:8px;padding:5px 10px;cursor:pointer;color:var(--ink);font:inherit;line-height:1.25}
+.carte-entree:hover{border-color:var(--line);background:var(--paper)}
+.carte-entree b{font-weight:500}
+.carte-entree small{color:var(--muted);font-size:12px}
+.carte-entree.actuelle{background:var(--accent-soft);border-color:var(--accent)}
+.carte-entree.actuelle b{font-weight:700}
+
+/* ---------- Header above the map ---------- */
+.carte-scene{display:flex;flex-direction:column;gap:8px;min-width:0}
+.carte-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.carte-fil{display:flex;align-items:center;gap:4px;flex-wrap:wrap;min-width:0}
+.carte-crumb{border:0;background:transparent;padding:2px 4px;border-radius:6px;cursor:pointer;color:var(--muted);font-family:var(--f-sc);font-weight:700;font-size:15px;letter-spacing:.03em}
+.carte-crumb:hover{color:var(--ink);text-decoration:underline}
+.carte-crumb.actuel{color:var(--ink);cursor:default;font-size:17px}
+.carte-sep{color:var(--muted)}
+.carte-outils{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.carte-compte{font-size:13px;color:var(--muted);font-family:var(--f-sc);letter-spacing:.04em}
+.carte-souci{margin:0;color:var(--ev);font-size:14px}
+.carte-aide{margin:0}
+
+/* ---------- The map and its overlay ----------
+   The frame shrinks to the image, so the SVG stretched over it lines up with
+   the picture whatever its aspect ratio. Zone coordinates are percentages,
+   hence viewBox="0 0 100 100" with preserveAspectRatio="none". */
+.carte-frame{position:relative;display:inline-block;margin:0;max-width:100%;align-self:center;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--surface);line-height:0}
+.carte-frame.charge{min-width:200px;min-height:120px}
+.carte-img{display:block;max-width:100%;max-height:calc(100vh - 230px);width:auto;height:auto}
+/* The editor sits above the map, so the map makes room for it. */
+.carte-scene:has(.carte-editeur:not([hidden])) .carte-img{max-height:calc(100vh - 380px)}
+.carte-zones{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.carte-zone{fill:transparent;stroke:transparent;stroke-width:2;cursor:pointer;transition:fill .12s,stroke .12s}
+.carte-zone.survol{fill:color-mix(in srgb,var(--accent) 22%,transparent);stroke:var(--accent)}
+.carte-frame.zones-on .carte-zone{fill:color-mix(in srgb,var(--accent) 10%,transparent);stroke:color-mix(in srgb,var(--accent) 70%,transparent);stroke-dasharray:4 3}
+.carte-frame.zones-on .carte-zone.survol{fill:color-mix(in srgb,var(--accent) 24%,transparent);stroke:var(--accent);stroke-dasharray:none}
+
+/* Zone names: HTML, not SVG text, so the stretched overlay cannot distort them. */
+.carte-noms{position:absolute;inset:0;pointer-events:none}
+.carte-nom{position:absolute;transform:translate(-50%,-50%);padding:2px 8px;border-radius:999px;background:var(--ink);color:var(--paper);font-family:var(--f-sc);font-weight:700;font-size:13px;letter-spacing:.04em;line-height:1.5;white-space:nowrap;opacity:0;transition:opacity .12s;box-shadow:0 1px 6px rgba(10,14,12,.35)}
+.carte-frame.zones-on .carte-nom{opacity:.92}
+.carte-nom.on{opacity:1;background:var(--accent);color:var(--accent-ink)}
+
+/* ---------- Zone editor ---------- */
+.carte-frame.edition{cursor:crosshair}
+.carte-frame.edition .carte-zone{pointer-events:none}
+.carte-apercu{fill:color-mix(in srgb,var(--ev) 20%,transparent);stroke:var(--ev);stroke-width:2;pointer-events:none}
+.carte-editeur{display:flex;flex-direction:column;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:10px}
+.carte-editeur .hint{margin:0}
+.carte-sortie{width:100%;box-sizing:border-box;font-family:var(--f-num);font-size:13px;resize:vertical}
+.carte-editeur-actions{display:flex;gap:6px}
+
+@media (max-width:860px){
+  .cartes{grid-template-columns:1fr}
+  .carte-menu{position:static;max-height:260px}
+  .carte-img{max-height:70vh}
+}

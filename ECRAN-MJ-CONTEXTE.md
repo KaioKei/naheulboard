@@ -61,7 +61,9 @@ This data is static. For integration, it can be extracted as-is into `.json` fil
   - **NPCs:** Attitude, voice, motivation, secret, and optionally origin, attributes, and skills.
 2. **Triggers** (`#v-trig`): Full-text search across heroes' profiles and role-playing hooks, plus an “had a spotlight moment” checkbox for each hero per session.
 3. **Journal** (`#v-journal`): Notes for the current session, archived with their date.
-4. **Backup** (`#v-backup`): JSON export and import, undo the last import, reset.
+4. **Backup** (`#v-backup`): save to a file, save as, load, undo the last load, reset.
+
+Two more tabs are filled by their own TypeScript modules, not by `mjScreen.js`, which only knows their ids: **Musique** (`#v-musique`, the soundboard) and **Cartes** (`#v-cartes`, the maps and their clickable regions, see `public/maps/README.md`).
 
 **The detailed character sheet** (`#dlg-hero`) has 5 tabs for a hero: Attributes, Skills, Equipment (with search in `EQUIP`), Role-playing, Notes. NPCs and enemies have a simpler sheet.
 

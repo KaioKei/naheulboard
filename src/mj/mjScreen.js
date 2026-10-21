@@ -5,7 +5,8 @@
  * ECRAN-MJ-CONTEXTE.md). Only three things differ from the original:
  *   - the IIFE became mountMjScreen(), called once by src/main.ts;
  *   - the six data constants became JSON imports (src/mj/data/);
- *   - the view list gained the Musique tab (the soundboard, rendered by src/ui/).
+ *   - the view list gained the Musique tab (the soundboard, rendered by src/ui/)
+ *     and the Cartes tab (the maps, rendered by src/maps/).
  *
  * This file stays vanilla JavaScript, original indentation and style included
  * (hence the French comments below): it is dense DOM code that works, and
@@ -21,9 +22,10 @@ import LIVRET from './data/livret.json';
 
 /**
  * Tab ids, in display order. Each one has a <section id="v-{id}"> in
- * index.html; 'musique' is filled by the soundboard, not by this module.
+ * index.html; 'musique' (the soundboard) and 'cartes' (the maps) are filled by
+ * their own TypeScript modules, not by this one.
  */
-export const MJ_VIEWS = ['persos', 'trig', 'journal', 'musique', 'backup'];
+export const MJ_VIEWS = ['persos', 'trig', 'journal', 'musique', 'cartes', 'backup'];
 
 /** Starts the screen: loads the local save and renders every view. */
 export function mountMjScreen() {

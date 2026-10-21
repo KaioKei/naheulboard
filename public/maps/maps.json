@@ -1,0 +1,95 @@
+{
+  "defaut": "carte-monde",
+  "cartes": [
+    {
+      "id": "carte-monde",
+      "nom": "Le monde connu",
+      "fichier": "Carte-monde.jpg",
+      "groupe": "Le monde",
+      "mots": "monde continent Syldérie Galzanie Birmilistan Grand Large océan",
+      "zones": [
+        {
+          "cible": "terre-de-fangh",
+          "nom": "Terre de Fangh",
+          "forme": "poly",
+          "coords": [43, 30, 48, 27, 56, 27, 60, 31, 60, 38, 56, 42, 47, 41, 43, 36]
+        }
+      ]
+    },
+    {
+      "id": "terre-de-fangh",
+      "nom": "Terre de Fangh",
+      "fichier": "terre-de-fangh.jpg",
+      "groupe": "",
+      "mots": "Fangh Glargh Kwzprtt Waldorg Montagnes du Nord Mer d'Embarh",
+      "zones": [
+        {
+          "cible": "fangh-sudouest",
+          "nom": "Fangh Sud-Ouest",
+          "forme": "rect",
+          "coords": [6.3, 44.4, 48.7, 84.5]
+        }
+      ]
+    },
+    {
+      "id": "fangh-sudouest",
+      "nom": "Fangh Sud-Ouest",
+      "fichier": "fangh-sudouest.jpg",
+      "groupe": "",
+      "mots": "sud-ouest Donjon de Naheulbeuk Loubet Ahokd Glandorn Lac Aspousser Groinsale",
+      "zones": [
+        {
+          "cible": "valtordu-environs",
+          "nom": "Comté de Valtordu",
+          "forme": "rect",
+          "coords": [12.1, 27.1, 38.5, 52.2]
+        }
+      ]
+    },
+    {
+      "id": "valtordu-environs",
+      "nom": "Environs de Valtordu",
+      "fichier": "valtordu/EnvironsValtordu-2021.jpg",
+      "groupe": "",
+      "mots": "Valtordu Pluck Forêt d'Ouien Donjon de Naheulbeuk Grotte de Nyrlatep Bois de Rustuli",
+      "zones": [
+        {
+          "cible": "valtordu-ville",
+          "nom": "Ville de Valtordu",
+          "forme": "rect",
+          "coords": [21, 44, 32, 55]
+        }
+      ]
+    },
+    {
+      "id": "valtordu-ville",
+      "nom": "Valtordu (plan de la ville)",
+      "fichier": "valtordu/valtordu-plan-parchemin.jpg",
+      "groupe": "",
+      "mots": "ville rues Place des Pendus Rue des Trois Boudins boudin pulls",
+      "zones": [
+        {
+          "cible": "valtordu-chateau-rdc",
+          "nom": "Château de Valtordu",
+          "forme": "rect",
+          "coords": [3.1, 34.5, 13.1, 51.6]
+        }
+      ]
+    },
+    {
+      "id": "valtordu-chateau-rdc",
+      "nom": "Château — rez-de-chaussée",
+      "fichier": "valtordu/chateau_valtordu_rdc.png",
+      "groupe": "",
+      "mots": "Valtordu château donjon grand hall cuisines écuries salle à manger tour de garde"
+    },
+    {
+      "id": "valtordu-chateau-etage1",
+      "nom": "Château — 1er étage",
+      "fichier": "valtordu/chateau_valtordu_etage1.png",
+      "groupe": "",
+      "parent": "valtordu-ville",
+      "mots": "Valtordu château étage bibliothèque archives chambre du seigneur pigeonnier"
+    }
+  ]
+}
