@@ -1,0 +1,289 @@
+/* Naheulboard: tavern-at-night theme. All colours are tokens below. */
+:root {
+  --bg: #17110d;
+  --panel: #241b15;
+  --panel-edge: #3a2c22;
+  --parchment: #eadcbc;
+  --parchment-dim: #d8c7a1;
+  --ink: #2b1d12;
+  --text: #f1e6cf;
+  --text-dim: #b9a88c;
+  --gold: #e0a84a;
+  --danger: #c24a3a;
+
+  --ch-musique: #9b7bd1;
+  --ch-ambiance: #4fa898;
+  --ch-son: #e0a84a;
+
+  --radius: 10px;
+  --serif: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+  --sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  -webkit-tap-highlight-color: transparent;
+}
+
+#app {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* ---- Top bar ---------------------------------------------------------- */
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--panel-edge);
+  margin-bottom: 16px;
+}
+
+.brand h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 2rem;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+}
+
+.brand p {
+  margin: 2px 0 0;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.topbar__controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.panic {
+  font: 600 1rem var(--sans);
+  color: #fff;
+  background: var(--danger);
+  border: none;
+  border-radius: var(--radius);
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.panic:hover {
+  filter: brightness(1.1);
+}
+
+.panic:active {
+  transform: translateY(1px);
+}
+
+/* ---- Volume slider ---------------------------------------------------- */
+
+.volume {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 180px;
+}
+
+.volume input {
+  flex: 1;
+  accent-color: var(--accent, var(--gold));
+}
+
+.volume__value {
+  width: 2.5ch;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+/* ---- Board & strips --------------------------------------------------- */
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.strip {
+  --accent: var(--gold);
+  background: var(--panel);
+  border: 1px solid var(--panel-edge);
+  border-top: 4px solid var(--accent);
+  border-radius: 4px 4px var(--radius) var(--radius);
+  padding: 14px;
+}
+
+.strip[data-channel='musique'] { --accent: var(--ch-musique); }
+.strip[data-channel='ambiance'] { --accent: var(--ch-ambiance); }
+.strip[data-channel='son'] { --accent: var(--ch-son); }
+
+.strip__header {
+  margin-bottom: 12px;
+}
+
+.strip__title {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  color: var(--accent);
+}
+
+.strip__hint {
+  margin: 2px 0 10px;
+  min-height: 2.4em; /* keeps sliders aligned across strips */
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.strip__grid {
+  display: grid;
+  /* Fits up to 5 tiles per row on a full-width board, fewer on narrower screens. */
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: 10px;
+}
+
+.strip__empty {
+  grid-column: 1 / -1;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+/* ---- Tiles ------------------------------------------------------------ */
+
+.tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 96px;
+  padding: 10px 6px;
+  background: var(--parchment);
+  color: var(--ink);
+  border: 3px solid transparent;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font: 600 0.85rem/1.2 var(--sans);
+  text-align: center;
+  transition: transform 0.08s, background-color 0.2s, border-color 0.2s;
+  user-select: none;
+}
+
+.tile:hover {
+  background: #f5ead2;
+}
+
+.tile:active {
+  transform: scale(0.96);
+}
+
+.tile:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.tile__icon {
+  font-size: 3.15rem;
+  line-height: 1;
+}
+
+.tile__icon-img {
+  width: 3.15rem;
+  height: 3.15rem;
+  object-fit: contain;
+  display: block;
+}
+
+/* Latching tiles (musique, ambiance) while playing */
+.tile.is-active {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 28%, var(--parchment));
+}
+
+.tile.is-active::after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+/* One-shot tiles (son) on click */
+.tile.is-fired {
+  animation: fired 0.45s ease-out;
+}
+
+@keyframes pulse {
+  50% { opacity: 0.3; }
+}
+
+@keyframes fired {
+  0% { background: var(--accent); transform: scale(0.93); }
+  100% { background: var(--parchment); transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile.is-active::after,
+  .tile.is-fired {
+    animation: none;
+  }
+}
+
+/* ---- Notices & errors ------------------------------------------------- */
+
+.notices:empty {
+  display: none;
+}
+
+.notice {
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  background: #3b2a12;
+  border: 1px solid var(--gold);
+  color: var(--parchment);
+}
+
+.fatal {
+  max-width: 720px;
+  margin: 10vh auto;
+  padding: 24px;
+  background: var(--panel);
+  border: 1px solid var(--danger);
+  border-radius: var(--radius);
+}
+
+.fatal h1 {
+  margin-top: 0;
+  font-family: var(--serif);
+  color: var(--danger);
+}
+
+.fatal li {
+  margin: 6px 0;
+  font-family: ui-monospace, monospace;
+}

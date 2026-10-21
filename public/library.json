@@ -1,0 +1,35 @@
+{
+  "sounds": [
+    { "channel": "musique", "id": "musique_taverne_tranquille", "label": "Taverne Tranquille", "icon": "musiques/taverne-calme.svg", "files": ["musiques/musique_taverne_tranquille.mp3"], "volume": 0.7 },
+    { "channel": "musique", "id": "musique_taverne_entrainante", "label": "Taverne Entrainante", "icon":"musiques/taverne-entrainante.svg" ,"files": ["musiques/musique_taverne_entrainante.mp3"], "volume": 0.7 },
+    { "channel": "musique", "id": "chateau_calme", "label": "Chateau Calme", "icon": "musiques/chateau-calme.svg" ,"files": ["musiques/musique_chateau_calme.mp3"], "volume": 0.7 },
+    { "channel": "musique", "id": "musique_action_tendue", "label": "Action Tendue", "icon": "musiques/action-tendue.svg" ,"files": ["musiques/musique_action_tendue.mp3"], "volume": 0.7 },
+    { "channel": "musique", "id": "musique_donjon", "label": "Donjon", "icon": "musiques/donjon.svg" ,"files": ["musiques/musique_donjon.mp3"], "volume": 0.7 },
+    { "channel": "musique", "id": "musique_mysterieuse", "label": "Mystere", "icon": "musiques/mysterieux.svg" ,"files": ["musiques/musique_mysterieuse.mp3"], "volume": 0.7 },
+    { "channel": "musique", "id": "musique_suspense", "label": "Suspense", "icon": "musiques/suspense.svg" ,"files": ["musiques/musique_suspense.mp3"], "volume": 0.7 },
+    { "channel": "musique", "id": "musique_inquietante", "label": "Inquiétant", "icon": "musiques/inquietude.svg" ,"files": ["musiques/musique_inquietante.mp3"], "volume": 0.7 },
+
+    { "channel": "ambiance", "id": "ambiance_bois_grincant", "label": "Bois Grincant", "icon": "ambiances/bois-qui-grince.svg" ,"files": ["ambiances/ambiance_bois_grince.mp3"], "volume": 1 },
+    { "channel": "ambiance", "id": "ambiance_chasse", "label": "Chasse", "icon": "ambiances/chasse.svg" ,"files": ["ambiances/ambiance_chasse.mp3"], "volume": 1 },
+    { "channel": "ambiance", "id": "ambiance_taverne_discussions", "icon": "ambiances/discussion-taverne.svg" ,"label": "Taverne Discussions", "files": ["ambiances/ambiance_taverne_dicussions.wav"], "volume": 1 },
+    { "channel": "ambiance", "id": "ambiance_taverne_baston", "icon": "ambiances/baston-taverne.svg" ,"label": "Taverne Baston", "files": ["ambiances/ambiance_taverne_baston.mp3"], "volume": 1 },
+
+    { "channel": "son", "id": "son_police", "label": "Police", "icon": "sons/gyrophare.svg", "files": ["sons/son_police.mp3"], "volume": 1 }
+
+  ],
+  "scenes": [
+    {
+      "id": "auberge",
+      "label": "L'auberge",
+      "icon": "🏠",
+      "music": "musique_taverne_tranquille",
+      "ambiances": ["ambiance_taverne_discussions"]
+    },
+    {
+      "id": "donjon",
+      "label": "Le Donjon",
+      "icon": "🏰",
+      "music": "musique_donjon"
+    }
+  ]
+}
