@@ -1,0 +1,121 @@
+{
+  "nom": "Julodion Largebide (Chasse Lapin) de Sous la Colline",
+  "oldNom": "Julodion Largebide Chasse Lapin de Sous la Colline",
+  "profile": {
+    "pitch": "Semi-elfe élevé seul par sa maman chez les semi-hommes, cuisinier et chasseur de lapins à l'arbalète, en quête des meilleurs ingrédients de la Terre de Fangh.",
+    "desir": "Découvrir les meilleurs ingrédients de la Terre de Fangh et cuisiner le repas ultime.",
+    "force": "Sa cuisine, tant que son imagination ne s'emballe pas. Pas le plus lâche du groupe (COU 12), tant qu'il y trouve son compte.",
+    "faiblesse": "Ni fort ni adroit (FO 8, AD 9, AT 7). Petit, voix fluette : souvent pris pour un enfant.",
+    "aime": "Les bons ingrédients, la cuisine, la forêt et la chasse au lapin.",
+    "tic": "Veut toujours goûter ce qu'il n'a jamais mangé, même quand ça n'a pas l'air ragoûtant.",
+    "secret": "Veut retrouver son père elfe, parti traire les vaches à sa naissance et jamais revenu. Pour lui casser la figure, lui faire un bon repas pour qu'il l'aime, ou lui demander pourquoi les vaches étaient si loin."
+  },
+  "oldProfile": {
+    "pitch": "Semi-elfe aux origines floues, souvent pris pour un enfant, qui se débrouille avec ce que la vie lui laisse.",
+    "force": "Le courage des Pieds-Velus (COU 12, le plus brave du groupe).",
+    "faiblesse": "Attire les monstres en combat, et ne frappe pas fort (AT 7)."
+  },
+  "background": "Julodion, « Jul » pour les intimes, « mon petit Jul » pour sa maman, a grandi dans les contrées des semi-hommes, élevé par sa mère seule. Il veut explorer la Terre de Fangh pour découvrir les meilleurs ingrédients de cuisine et, peut-être, préparer le repas ultime.\n\nPlutôt petit, avec une voix fluette, on pourrait le prendre pour un enfant. Ce n'est pas sa façon de parler qui lève le doute, mais la pilosité de ses pieds.\n\nOn l'appelle Chasse Lapin parce qu'il passe beaucoup de temps en forêt avec son arbalète (et parfois, il ramène même un lapin).\n\nSecrètement, il veut retrouver son père elfe, parti traire les vaches à sa naissance et jamais revenu. Pour lui casser la figure, pour lui faire un bon repas afin qu'il l'aime, ou pour lui demander pourquoi les vaches étaient si loin.",
+  "oldBackgroundStart": "Croisement rarissime",
+  "reperes": [
+    "Goûte tout ce qu'il n'a jamais mangé, même le peu ragoûtant",
+    "Attire les monstres : ciblé en premier au début de chaque combat",
+    "Bâtard : malus CHA face aux semi-hommes et aux elfes",
+    "Pris pour un enfant (petit, voix fluette)… jusqu'à ce qu'on voie ses pieds poilus",
+    "Arbalète grâce à Tirer correctement · mains nues grâce à Bourre-pif",
+    "Charge max 10 kg · pas d'arme à deux mains · PR naturelle max 4 (origine) / 3 (métier)"
+  ],
+  "oldReperes": [
+    "Attire les monstres : ciblé en premier au début de chaque combat",
+    "Bâtard : malus CHA face aux semi-hommes et aux elfes",
+    "Charge max : 10 kg, pas d'arme à deux mains",
+    "PR naturelle max : 4 (Semi-elfe) / 3 (Traîne-patins)",
+    "Souvent pris pour un enfant en ville"
+  ],
+  "accroches": [
+    {
+      "declencheur": "Un aliment inconnu : fruit bizarre, champignon, viande de monstre, potion",
+      "source": "Tic : goûter l'inconnu",
+      "reaction": "Il veut y goûter, quoi qu'en dise le groupe. À toi de choisir : régal, indigestion (petit malus pour quelques heures), effet inattendu, ou ingrédient rare pour le repas ultime.",
+      "mots": "nourriture, manger, goûter, champignon, fruit, viande, potion, ingrédient, inconnu, bizarre, monstre"
+    },
+    {
+      "declencheur": "Un ingrédient rare, un marché exotique, un grand cuisinier",
+      "source": "Désir : le repas ultime",
+      "reaction": "Accroche de quête toute trouvée : la recette légendaire, l'épice introuvable, le concours de cuisine. Il est prêt à faire de gros détours pour ça.",
+      "mots": "ingrédient, épice, recette, cuisine, cuisinier, marché, concours, repas, quête"
+    },
+    {
+      "declencheur": "Un repas, un campement",
+      "source": "Cuistot (AD) · Second petit déjeuner · Instinct de survie",
+      "reaction": "Cuistot : PV en plus pour tout le groupe ; jusqu'à 4 repas régénérants par jour ; Instinct de survie pour trouver à manger. Si son imagination s'emballe (échec du Cuistot), la recette tourne mal : effets à ta discrétion.",
+      "mots": "repas, cuisine, nourriture, campement, faim, bivouac"
+    },
+    {
+      "declencheur": "Un elfe, surtout s'il est vieux et voyage seul",
+      "source": "Secret : son père elfe · Bâtard (CHA)",
+      "reaction": "Et si c'était lui ? Malus de CHA face aux elfes (Bâtard), mais l'occasion d'une scène sur son père. Un indice par aventure suffit.",
+      "mots": "elfe, père, famille, origines, sylvain"
+    },
+    {
+      "declencheur": "Des vaches, une ferme, un laitier, du lait",
+      "source": "Secret : le père parti traire les vaches",
+      "reaction": "Il veut savoir où sont ces fameuses vaches si loin. Un vieux fermier se souvient peut-être d'un elfe qui trayait très mal…",
+      "mots": "vache, ferme, lait, laitier, fermier, étable, troupeau, fromage, traire"
+    },
+    {
+      "declencheur": "Des semi-hommes, un village de Sous la Colline",
+      "source": "Background : sa maman · Bâtard (CHA)",
+      "reaction": "On le reconnaît : « Mais c'est le petit Jul ! » Des nouvelles de sa maman, ou des commérages sur son père. Malus de CHA s'ils le prennent de haut.",
+      "mots": "semi-homme, pieds-velus, village, colline, maman, mère, famille"
+    },
+    {
+      "declencheur": "Un lapin, du gibier, une partie de chasse",
+      "source": "Surnom Chasse Lapin · Tirer correctement",
+      "reaction": "Il sort l'arbalète, même au mauvais moment. Parfois il ramène vraiment un lapin, et il le cuisine.",
+      "mots": "lapin, gibier, chasse, chasser, forêt, arbalète, tir, tirer"
+    },
+    {
+      "declencheur": "Un animal rare, étrange ou mignon",
+      "source": "Tic : goûter l'inconnu · conflit avec Tiny",
+      "reaction": "Julodion se demande quel goût il a ; Tiny, qui adore les animaux, veut le protéger. Friction de groupe garantie.",
+      "mots": "animal, bête, créature, mignon, rare, monture, tiny"
+    },
+    {
+      "declencheur": "Le combat commence",
+      "source": "Attire les monstres · Tirer correctement · Bourre-pif · Appel des renforts",
+      "reaction": "Les ennemis le visent en premier (heureusement, 26 EV). Il peut tirer à l'arbalète avant le contact, se battre à mains nues s'il est désarmé, et fuir sans être blessé avec Appel des renforts.",
+      "mots": "combat, bagarre, monstre, embuscade"
+    },
+    {
+      "declencheur": "Une rixe de taverne, il est désarmé",
+      "source": "Bourre-pif",
+      "reaction": "Accès au combat à mains nues : il distribue les pains comme un grand.",
+      "mots": "bagarre, rixe, mains nues, poing, désarmé, taverne"
+    },
+    {
+      "declencheur": "On le prend pour un enfant",
+      "source": "Taille modeste · Naïveté touchante (CHA)",
+      "reaction": "On refuse de le servir, on lui parle comme à un gamin… jusqu'à ce qu'on voie ses pieds poilus. Naïveté touchante (CHA) peut retourner la situation.",
+      "mots": "taverne, ville, auberge, bière, garde, enfant, gamin"
+    }
+  ],
+  "replaces": [
+    "Le combat commence",
+    "Un elfe ou un semi-homme",
+    "La taverne, la ville",
+    "Un repas, un campement"
+  ],
+  "skills": [
+    {
+      "nom": "Tirer correctement",
+      "carac": "AD",
+      "desc": "Utiliser des armes de jet : arbalète, arc, javelot. Indispensable pour son arbalète."
+    },
+    {
+      "nom": "Bourre-pif",
+      "carac": "",
+      "desc": "Accès au combat à mains nues."
+    }
+  ]
+}

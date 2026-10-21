@@ -1,0 +1,154 @@
+{
+  "tiny": {
+    "pitch": "Gnome de la forêt de Fernol, coach de basket de sa tribu, envoyé marchander hors de la forêt pour équiper son club.",
+    "desir": "Vivre librement et simplement : rires, jeux, curiosités.",
+    "force": "Drôle et adorable, tout le monde l'aime. Agile et tacticien : imbattable au basket.",
+    "faiblesse": "Petit, fragile et peureux.",
+    "aime": "Solidarité, partage, nature, sobriété, animaux, beaux objets.",
+    "deteste": "Ceux qui se prennent au sérieux et les puissants : nobles, garde, guildes, chevaliers, capitalistes, religieux. Qu'on fasse du mal à la nature.",
+    "tic": "Porte toujours le chasuble de son club. Transforme tout en tentative de panier.",
+    "secret": "Terrifié à l'idée que les gnomes retournent en esclavage chez le Père Noël. Il n'en parle jamais.",
+    "background": "Né dans une tribu de gnomes de la forêt de Fernol, où tout le monde est égal parce que tout le monde est gentil, rieur et curieux. Coach de basket de la tribu, il voit le commerce comme de l'ingénierie : des ressources, des problèmes, des solutions. La tribu l'a donc désigné pour aller marchander hors de la forêt et rapporter au club ce qui n'y pousse pas : pigments pour les maillots, caoutchouc pour les ballons, acier de qualité.",
+    "reperes": [
+      {
+        "texte": "Ne parle pas la langue commune : négocie par gestes, dessins, signes d'arbitre"
+      },
+      {
+        "texte": "Panier ! Épreuve d'AD, 1 fois par scène"
+      },
+      {
+        "texte": "Chasuble du club : reconnu partout en public"
+      },
+      {
+        "texte": "Peureux et fragile (COU 8, 15 EV)"
+      },
+      {
+        "texte": "Charge max 2 kg · poignards et couteaux · pas de magie sauf sur arme ou protection"
+      }
+    ],
+    "accroches": [
+      {
+        "declencheur": "Une cible, un trou, une corbeille à portée, ou un objet à lancer",
+        "source": "Panier ! (AD) · tic",
+        "reaction": "Il tente un panier : épreuve d'AD, 1 fois par scène. Réussi : petit avantage ou fou rire général. Raté : l'objet finit au pire endroit (la clé dans le puits). « HOP, 3 POINTS ! »",
+        "mots": "panier, lancer, jeter, trou, corbeille, puits, cible, clé"
+      },
+      {
+        "declencheur": "Un noble, un garde, un chevalier, un prêtre, un gros marchand",
+        "source": "Déteste les puissants",
+        "reaction": "Il se moque d'eux ouvertement. Idéal pour créer des ennuis, ou pour dégonfler une scène trop solennelle.",
+        "mots": "noble, garde, chevalier, guilde, prêtre, religieux, temple, autorité, riche, capitaliste"
+      },
+      {
+        "declencheur": "On abîme la nature ou on maltraite un animal",
+        "source": "Aime la nature et les animaux",
+        "reaction": "Il ne laisse pas passer, même s'il a peur. Bonne occasion de Chevaucher (AD, CHA) la bête en question.",
+        "mots": "nature, forêt, arbre, bûcheron, braconnier, animal, bête"
+      },
+      {
+        "declencheur": "Il faut parler à quelqu'un",
+        "source": "Ne parle pas la langue commune (origine)",
+        "reaction": "Il négocie par gestes, dessins et signes d'arbitre. Laisse le joueur mimer et fais réagir les PNJ complètement à côté.",
+        "mots": "dialogue, discussion, négociation, parler, pnj"
+      },
+      {
+        "declencheur": "Un marchand, une boutique, une affaire",
+        "source": "Arnaque et carambouille (CHA) · Fariboles (INT, CHA)",
+        "reaction": "Pour lui le commerce, c'est de l'ingénierie : ressources, problèmes, solutions. « C'est une affaire ! » Prévois un marchand qui tente de l'arnaquer en retour.",
+        "mots": "marché, marchand, boutique, vendre, acheter, argent, or"
+      },
+      {
+        "declencheur": "Pigments, caoutchouc, acier de qualité",
+        "source": "Background : mission pour le club",
+        "reaction": "C'est exactement ce que sa tribu attend de lui. Accroche de quête toute trouvée.",
+        "mots": "pigment, teinture, caoutchouc, acier, forge, matériaux, quête"
+      },
+      {
+        "declencheur": "Un jeu, un pari, une compétition, une fête",
+        "source": "Agile · Super esquive · force",
+        "reaction": "Il défie tout le monde et gagne à plate couture. Les perdants qui se prennent au sérieux le prennent très mal.",
+        "mots": "jeu, pari, défi, sport, concours, fête, tournoi"
+      },
+      {
+        "declencheur": "Il faut passer incognito en public",
+        "source": "Tic : chasuble du club",
+        "reaction": "Tout le monde le reconnaît. Pas de discrétion en ville sans enlever le chasuble, et il n'aime pas l'enlever.",
+        "mots": "foule, ville, recherché, déguisement, incognito, discrétion"
+      },
+      {
+        "declencheur": "Le Père Noël, des lutins, des rennes, un bonnet rouge",
+        "source": "Secret : sa grande peur",
+        "reaction": "Sa terreur absolue. À doser : un simple bonnet rouge peut le paralyser (épreuve de COU).",
+        "mots": "noël, père noël, lutin, rennes, traîneau, cadeau, bonnet, esclave, esclavage, hiver"
+      },
+      {
+        "declencheur": "Le combat éclate",
+        "source": "Peureux · Super esquive · Appel des renforts",
+        "reaction": "15 EV seulement. Il attaque et esquive à chaque assaut, et fuit sans être blessé grâce à Appel des renforts. Il ne se fait pas prier.",
+        "mots": "combat, bagarre, monstre, embuscade"
+      },
+      {
+        "declencheur": "Un coffre, une cachette, un butin",
+        "source": "Instinct du trésor (INT)",
+        "reaction": "Il flaire la planque. Mais il ne porte que 2 kg : qui porte le reste ?",
+        "mots": "trésor, coffre, cachette, butin"
+      },
+      {
+        "declencheur": "Un PNJ raconte des salades",
+        "source": "Méfiance (INT)",
+        "reaction": "Il sait quand on lui ment, même s'il ne comprend pas tout ce qu'on dit.",
+        "mots": "mensonge, ment, menteur, interrogatoire"
+      },
+      {
+        "declencheur": "Une bestiole, une monture",
+        "source": "Chevaucher (AD, CHA)",
+        "reaction": "Il peut tenter de monter n'importe quoi : sanglier, chèvre, ours mal luné.",
+        "mots": "animal, monture, cheval, bête"
+      },
+      {
+        "declencheur": "Se faufiler, passer par un trou",
+        "source": "Déplacement silencieux (AD) · Agile",
+        "reaction": "Impossible à attraper. Le petit qui passe là où personne ne passe.",
+        "mots": "discrétion, infiltration, conduit, serrure, garde"
+      },
+      {
+        "declencheur": "Un livre, un contrat, une inscription",
+        "source": "Érudition (INT)",
+        "reaction": "Le seul qui comprend le contrat… sans pouvoir l'expliquer à voix haute.",
+        "mots": "lire, écrit, livre, contrat, parchemin"
+      },
+      {
+        "declencheur": "Un objet magique",
+        "source": "Restriction d'origine",
+        "reaction": "N'utilise pas de magie, sauf sur arme ou protection.",
+        "mots": "magie, sort, objet magique"
+      }
+    ],
+    "panier": {
+      "acquise": true,
+      "nom": "Panier !",
+      "source": "Personnage",
+      "carac": "AD",
+      "desc": "Tente un panier sur une cible adaptée, ou quand il doit lancer quelque chose. Épreuve d'AD, 1 fois par scène."
+    }
+  },
+  "julSources": {
+    "Le combat commence": "Attire les monstres · Appel des renforts",
+    "Un elfe ou un semi-homme": "Bâtard (CHA)",
+    "La taverne, la ville": "Taille modeste · Naïveté touchante (CHA)",
+    "Un repas, un campement": "Cuistot (AD) · Second petit déjeuner · Instinct de survie",
+    "Une malédiction": "Résistance des pieds velus",
+    "Un marchand à plumer": "Arnaque et carambouille (CHA)",
+    "Des poubelles, une décharge": "Fouiller dans les poubelles (INT)",
+    "Un mur, une falaise, une fenêtre": "Escalader (AD)",
+    "Se faire oublier": "Ressemble à rien",
+    "Un PNJ ment": "Méfiance (INT)",
+    "Une bourse qui dépasse": "Chouraver (AD)",
+    "Entre deux aventures": "Mendier et pleurnicher (CHA, INT)"
+  },
+  "jul": {
+    "pitch": "Semi-elfe aux origines floues, souvent pris pour un enfant, qui se débrouille avec ce que la vie lui laisse.",
+    "force": "Le courage des Pieds-Velus (COU 12, le plus brave du groupe).",
+    "faiblesse": "Attire les monstres en combat, et ne frappe pas fort (AT 7)."
+  }
+}

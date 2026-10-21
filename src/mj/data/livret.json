@@ -1,0 +1,1729 @@
+{
+  "origines": [
+    {
+      "id": "humain",
+      "nom": "Humain",
+      "sous": "L'aventurier de base",
+      "ev": 30,
+      "evPlus": "",
+      "min": {},
+      "max": {},
+      "at": 8,
+      "prd": 10,
+      "charge": 0,
+      "pr": 0,
+      "restr": [
+        "Aucune restriction : l'Humain peut tout faire (mais pas forcément bien…)"
+      ],
+      "nais": [],
+      "choix": [],
+      "notes": [
+        "Sans métier : 3 compétences au choix parmi toutes (sauf Appel du sauvage). Avec métier : 2 du métier + 1 au choix."
+      ],
+      "interdits": []
+    },
+    {
+      "id": "barbare",
+      "nom": "Barbare",
+      "sous": "Le bourrin des steppes",
+      "ev": 35,
+      "evPlus": "",
+      "min": {
+        "fo": 13,
+        "cou": 12
+      },
+      "max": {},
+      "at": 9,
+      "prd": 9,
+      "charge": 0,
+      "pr": 0,
+      "restr": [
+        "N'utilise pas la magie, sauf sur arme enchantée",
+        "N'utilise pas d'armes complexes (arbalète, arme à feu…)",
+        "N'utilise pas d'armure complète ou enchantée",
+        "N'utilise pas de bouclier, sauf cas particulier",
+        "Jamais d'armure sur toutes les parties du corps à la fois"
+      ],
+      "nais": [
+        "Bourre-pif",
+        "Chercher des noises",
+        "Écorchage des barbares",
+        "Sentir des pieds",
+        "Tête vide"
+      ],
+      "choix": [
+        "Ambidextrie",
+        "Armes de bourrin",
+        "Chevaucher",
+        "Connaissances des steppes",
+        "Escalader",
+        "Intimider",
+        "Nager",
+        "Pister",
+        "Tannerie",
+        "Tirer correctement",
+        "Truc de mauviette"
+      ],
+      "notes": [
+        "Résiste au froid, au chaud et à la douleur"
+      ],
+      "interdits": [
+        "mage"
+      ]
+    },
+    {
+      "id": "nain",
+      "nom": "Nain",
+      "sous": "Le piocheur des cavernes",
+      "ev": 35,
+      "evPlus": "",
+      "min": {
+        "fo": 12,
+        "cou": 11
+      },
+      "max": {},
+      "at": 8,
+      "prd": 10,
+      "charge": 0,
+      "pr": 0,
+      "restr": [
+        "N'utilise pas la magie : ni objets chargés, ni parchemins",
+        "N'utilise pas d'arc (trop elfique)",
+        "N'utilise pas les armes à 2 mains « humaines » ; armes humaines à 1 main = 2 mains pour lui (+1 dégâts)"
+      ],
+      "nais": [
+        "Appel du tonneau",
+        "Vilain jargon gobelin",
+        "Camping souterrain",
+        "Instinct du trésor",
+        "Lecture du nainscrit",
+        "Pénible",
+        "Radin"
+      ],
+      "choix": [
+        "Appel des renforts",
+        "Arnaque et carambouille",
+        "Bourre-pif",
+        "Bricolo du dimanche",
+        "Chercher des noises",
+        "Connaissances des cavernes",
+        "Fariboles",
+        "Forgeron",
+        "Méfiance",
+        "Truc de mauviette",
+        "Tirer correctement"
+      ],
+      "notes": [
+        "Toujours des malus en escalade et en discrétion"
+      ],
+      "interdits": [
+        "mage"
+      ]
+    },
+    {
+      "id": "haut-elfe",
+      "nom": "Haut-Elfe",
+      "sous": "L'érudit hautain",
+      "ev": 25,
+      "evPlus": "",
+      "min": {
+        "cha": 12,
+        "ad": 12,
+        "int": 11
+      },
+      "max": {
+        "fo": 12
+      },
+      "at": 8,
+      "prd": 10,
+      "charge": 10,
+      "pr": 4,
+      "restr": [
+        "N'utilise pas les armes de bourrin non elfiques"
+      ],
+      "nais": [
+        "Détecter",
+        "Érudition",
+        "Runes bizarres",
+        "Tomber dans les pièges"
+      ],
+      "choix": [
+        "Ambidextrie",
+        "Chef de groupe",
+        "Chevaucher",
+        "Connaissances générales",
+        "Héritage Meuldor",
+        "Jonglage et danse",
+        "Nager",
+        "Premiers soins",
+        "Tirer correctement"
+      ],
+      "notes": [
+        "+1 CHA au passage des niveaux 2 et 3"
+      ],
+      "interdits": []
+    },
+    {
+      "id": "sylvain",
+      "nom": "Elfe sylvain",
+      "sous": "Le forestier joyeux",
+      "ev": 25,
+      "evPlus": "",
+      "min": {
+        "cha": 12,
+        "ad": 12
+      },
+      "max": {
+        "fo": 11
+      },
+      "at": 8,
+      "prd": 10,
+      "charge": 10,
+      "pr": 4,
+      "restr": [
+        "N'utilise pas les armes de bourrin",
+        "Peu enclin aux études magiques",
+        "Avec Tête vide : ni mage, ni prêtre, ni paladin"
+      ],
+      "nais": [
+        "Camping forestier",
+        "Chevaucher",
+        "Détecter",
+        "Naïveté touchante",
+        "Premiers soins",
+        "Tirer correctement",
+        "Tomber dans les pièges"
+      ],
+      "choix": [
+        "Ambidextrie",
+        "Comprendre les animaux",
+        "Connaissances de la nature",
+        "Déplacement silencieux",
+        "Héritage sylvestre des Meuldors",
+        "Jonglage et danse",
+        "Nager",
+        "Pister",
+        "Tête vide"
+      ],
+      "notes": [
+        "+1 CHA au passage des niveaux 2 et 3",
+        "Arme de jet préférée : l'arc"
+      ],
+      "interdits": []
+    },
+    {
+      "id": "elfe-noir",
+      "nom": "Elfe noir",
+      "sous": "L'héritier du chaos",
+      "ev": 25,
+      "evPlus": "",
+      "min": {
+        "ad": 13,
+        "int": 12
+      },
+      "max": {
+        "fo": 12
+      },
+      "at": 8,
+      "prd": 10,
+      "charge": 15,
+      "pr": 3,
+      "restr": [
+        "N'utilise pas les armes de bourrin non elfiques",
+        "N'utilise pas de grand bouclier"
+      ],
+      "nais": [
+        "Agoraphobie",
+        "Déplacement silencieux",
+        "Détecter",
+        "Tirer correctement"
+      ],
+      "choix": [
+        "Ambidextrie",
+        "Camping souterrain",
+        "Chouraver",
+        "Connaissances des cavernes",
+        "Érudition",
+        "Entretien du matériel",
+        "Escalader",
+        "Méfiance",
+        "Pister",
+        "Runes bizarres",
+        "Séduction des Drows"
+      ],
+      "notes": [
+        "Mal à l'aise dans la foule"
+      ],
+      "interdits": []
+    },
+    {
+      "id": "semi-homme",
+      "nom": "Semi-homme",
+      "sous": "Un genre de hobbit",
+      "ev": 25,
+      "evPlus": "+1D4 EV par niveau",
+      "min": {
+        "cou": 12,
+        "int": 10
+      },
+      "max": {
+        "fo": 10
+      },
+      "at": 8,
+      "prd": 10,
+      "charge": 10,
+      "pr": 3,
+      "restr": [
+        "N'utilise pas d'arc long ni d'arme à 2 mains « à taille humaine » ; armes à 1 main = 2 mains pour lui",
+        "N'utilise pas d'armure complète"
+      ],
+      "nais": [
+        "Appel du tonneau",
+        "Attire les monstres",
+        "Cuistot",
+        "Instinct de survie",
+        "Résistance des pieds velus",
+        "Ressemble à rien",
+        "Second petit déjeuner"
+      ],
+      "choix": [
+        "Appel des renforts",
+        "Chouraver",
+        "Connaissances culinaires",
+        "Érudition",
+        "Fariboles",
+        "Fouiller dans les poubelles",
+        "Frapper lâchement",
+        "Instinct du trésor",
+        "Mendier et pleurnicher",
+        "Tirer correctement"
+      ],
+      "notes": [
+        "Souvent pris pour un enfant",
+        "Vêtements et protections 20 % plus chers"
+      ],
+      "interdits": []
+    },
+    {
+      "id": "orque",
+      "nom": "Orque",
+      "sous": "Le paria combatif",
+      "ev": 35,
+      "evPlus": "",
+      "min": {
+        "fo": 12
+      },
+      "max": {
+        "int": 8,
+        "cha": 10
+      },
+      "at": 9,
+      "prd": 9,
+      "charge": 0,
+      "pr": 0,
+      "restr": [
+        "N'utilise aucune forme de magie (ni arme, ni armure, ni objet)",
+        "N'utilise pas d'arbalète ni d'armes complexes"
+      ],
+      "nais": [
+        "Agoraphobie",
+        "Appel du sauvage",
+        "Appel du tonneau",
+        "Bourre-pif",
+        "Instinct de survie",
+        "Ressenti du surnaturel",
+        "Sentir des pieds",
+        "Taquinerie divine",
+        "Tête vide"
+      ],
+      "choix": [
+        "Armes de bourrin",
+        "Baragouinage des monstres",
+        "Chercher des noises",
+        "Fouiller dans les poubelles",
+        "Intimider",
+        "Truc de mauviette"
+      ],
+      "notes": [
+        "Flaire le sang ou le danger à 50 m, nyctalopie totale",
+        "Mal à l'aise dans la foule"
+      ],
+      "interdits": [
+        "mage",
+        "pretre",
+        "paladin"
+      ]
+    },
+    {
+      "id": "gobelin",
+      "nom": "Gobelin",
+      "sous": "Le bricoleur frénétique",
+      "ev": 20,
+      "evPlus": "+1D4 EV par niveau",
+      "min": {},
+      "max": {
+        "int": 10,
+        "cha": 8,
+        "cou": 10,
+        "fo": 9
+      },
+      "at": 8,
+      "prd": 10,
+      "charge": 10,
+      "pr": 0,
+      "restr": [
+        "N'utilise aucune forme de magie",
+        "Ne parle pas la langue des Humains",
+        "Armes longues à 1 main = 2 mains pour lui"
+      ],
+      "nais": [
+        "Agoraphobie",
+        "Appel des renforts",
+        "Appel du sauvage",
+        "Attire les monstres",
+        "Bric-à-brac",
+        "Instinct de survie",
+        "Instinct du trésor",
+        "Ressenti du surnaturel",
+        "Sentir des pieds",
+        "Taquinerie divine",
+        "Tête vide",
+        "Vicieux"
+      ],
+      "choix": [
+        "Baragouinage des monstres",
+        "Bricolo du dimanche",
+        "Désamorcer",
+        "Escalader",
+        "Forgeron"
+      ],
+      "notes": [
+        "Jamais de malus de PRD ou d'esquive dû à l'armure (mais l'AT peut baisser)",
+        "Vêtements et protections 20 % plus chers"
+      ],
+      "interdits": [
+        "mage",
+        "pretre",
+        "paladin"
+      ]
+    },
+    {
+      "id": "ogre",
+      "nom": "Ogre",
+      "sous": "Le mangeur",
+      "ev": 45,
+      "evPlus": "",
+      "min": {
+        "fo": 13
+      },
+      "max": {
+        "int": 9,
+        "ad": 11,
+        "cha": 10
+      },
+      "at": 9,
+      "prd": 9,
+      "charge": 0,
+      "pr": 4,
+      "restr": [
+        "N'utilise pas d'armes complexes ni d'arc",
+        "Ne pratique aucune forme de magie",
+        "Ne parle pas la langue",
+        "N'utilise pas de dagues, poignards ni lames courtes"
+      ],
+      "nais": [
+        "Appel du ventre",
+        "Appel du tonneau",
+        "Armes de bourrin",
+        "Instinct de survie",
+        "Intimider",
+        "Puissant +",
+        "Sentir des pieds",
+        "Tête vide",
+        "Ventre sur pattes"
+      ],
+      "choix": [
+        "Bourre-pif",
+        "Chercher des noises",
+        "Connaissances culinaires",
+        "Fouiller dans les poubelles",
+        "Langue des monstres",
+        "Truc de mauviette"
+      ],
+      "notes": [
+        "Super-bourrin : à la création, peut retirer jusqu'à 3 points d'AT/PRD pour autant de bonus aux dégâts",
+        "Vêtements et protections 30 % plus chers"
+      ],
+      "interdits": [
+        "mage"
+      ]
+    },
+    {
+      "id": "gnome",
+      "nom": "Gnôme des forêts du Nord",
+      "sous": "Le minuscule acrobate",
+      "ev": 15,
+      "evPlus": "+1D4 EV par niveau",
+      "min": {
+        "ad": 13,
+        "int": 10
+      },
+      "max": {
+        "fo": 8
+      },
+      "at": 10,
+      "prd": 8,
+      "charge": 2,
+      "pr": 2,
+      "restr": [
+        "N'utilise pas la magie, sauf sur arme ou protection",
+        "Armes : poignards, couteaux, petites lames uniquement",
+        "Ne parle pas la langue des Humains"
+      ],
+      "nais": [
+        "Agile",
+        "Ambidextrie",
+        "Appel des renforts",
+        "Chevaucher",
+        "Chouraver",
+        "Déplacement silencieux",
+        "Instinct du trésor",
+        "Super esquive"
+      ],
+      "choix": [
+        "Comprendre les animaux",
+        "Connaissances de la nature",
+        "Désamorcer",
+        "Détecter",
+        "Escalader",
+        "Jonglage et danse",
+        "Mendier et pleurnicher",
+        "Nager",
+        "Serrurier",
+        "Tirer correctement"
+      ],
+      "notes": [
+        "Esquive en permanence sans rater d'assaut",
+        "Vêtements et protections 50 % plus chers"
+      ],
+      "interdits": []
+    },
+    {
+      "id": "demi-elfe",
+      "nom": "Demi-Elfe 2e génération",
+      "sous": "Le bâtard gracieux",
+      "ev": 28,
+      "evPlus": "",
+      "min": {
+        "cha": 10,
+        "ad": 11
+      },
+      "max": {},
+      "at": 8,
+      "prd": 10,
+      "charge": 15,
+      "pr": 5,
+      "restr": [
+        "N'utilise pas les armes de bourrin"
+      ],
+      "nais": [
+        "Appel des renforts",
+        "Bâtard",
+        "Détecter",
+        "Chouraver",
+        "Méfiance"
+      ],
+      "choix": [
+        "Bricolo du dimanche",
+        "Chevaucher",
+        "Érudition",
+        "Escalader",
+        "Fouiller dans les poubelles",
+        "Mendier et pleurnicher",
+        "Nager",
+        "Tirer correctement"
+      ],
+      "notes": [],
+      "interdits": []
+    },
+    {
+      "id": "demi-haut-elfe",
+      "nom": "Demi-Haut-Elfe",
+      "sous": "Humain et Haut-Elfe",
+      "ev": 28,
+      "evPlus": "",
+      "min": {
+        "cha": 11,
+        "ad": 11,
+        "int": 11
+      },
+      "max": {},
+      "at": 8,
+      "prd": 10,
+      "charge": 15,
+      "pr": 5,
+      "restr": [
+        "N'utilise pas les armes de bourrin"
+      ],
+      "nais": [
+        "Appel des renforts",
+        "Bâtard",
+        "Méfiance"
+      ],
+      "choix": [
+        "Chef de groupe",
+        "Chevaucher",
+        "Connaissances générales",
+        "Érudition",
+        "Jonglage et danse",
+        "Premiers soins",
+        "Runes bizarres"
+      ],
+      "notes": [],
+      "interdits": []
+    },
+    {
+      "id": "demi-sylvain",
+      "nom": "Demi-Sylvain",
+      "sous": "Humain et Sylvain",
+      "ev": 28,
+      "evPlus": "",
+      "min": {
+        "cha": 11,
+        "ad": 10
+      },
+      "max": {},
+      "at": 8,
+      "prd": 10,
+      "charge": 15,
+      "pr": 5,
+      "restr": [
+        "N'utilise pas les armes de bourrin"
+      ],
+      "nais": [
+        "Appel des renforts",
+        "Bâtard",
+        "Méfiance"
+      ],
+      "choix": [
+        "Camping forestier",
+        "Comprendre les animaux",
+        "Connaissances de la nature",
+        "Déplacement silencieux",
+        "Jonglage et danse",
+        "Nager",
+        "Pister",
+        "Tirer correctement"
+      ],
+      "notes": [],
+      "interdits": []
+    },
+    {
+      "id": "demi-elfe-noir",
+      "nom": "Demi-Elfe noir",
+      "sous": "Humain et Drow",
+      "ev": 28,
+      "evPlus": "",
+      "min": {
+        "int": 11,
+        "ad": 12
+      },
+      "max": {},
+      "at": 8,
+      "prd": 10,
+      "charge": 15,
+      "pr": 4,
+      "restr": [
+        "N'utilise pas les armes à 2 mains"
+      ],
+      "nais": [
+        "Agoraphobie",
+        "Appel des renforts",
+        "Bâtard",
+        "Méfiance"
+      ],
+      "choix": [
+        "Ambidextrie",
+        "Chouraver",
+        "Connaissances des cavernes",
+        "Érudition",
+        "Escalader",
+        "Entretien du matériel",
+        "Frapper lâchement",
+        "Pister",
+        "Runes bizarres",
+        "Tirer correctement"
+      ],
+      "notes": [],
+      "interdits": []
+    },
+    {
+      "id": "demi-orque",
+      "nom": "Demi-Orque",
+      "sous": "Le bagarreur méfiant",
+      "ev": 35,
+      "evPlus": "",
+      "min": {
+        "fo": 12
+      },
+      "max": {
+        "int": 10,
+        "cha": 11
+      },
+      "at": 8,
+      "prd": 10,
+      "charge": 0,
+      "pr": 0,
+      "restr": [
+        "N'utilise pas la magie, sauf sur arme ou protection enchantée",
+        "N'utilise pas d'arbalète ni d'armes complexes",
+        "Ne peut jamais apprendre à lire"
+      ],
+      "nais": [
+        "Agoraphobie",
+        "Bâtard",
+        "Chercher des noises",
+        "Instinct de survie",
+        "Sentir des pieds",
+        "Tête vide"
+      ],
+      "choix": [
+        "Armes de bourrin",
+        "Baragouinage des monstres",
+        "Bourre-pif",
+        "Escalader",
+        "Fouiller dans les poubelles",
+        "Intimider",
+        "Nager",
+        "Tirer correctement",
+        "Truc de mauviette"
+      ],
+      "notes": [],
+      "interdits": [
+        "mage"
+      ]
+    },
+    {
+      "id": "demi-gobelin",
+      "nom": "Demi-Gobelin",
+      "sous": "Humain et Gobelin",
+      "ev": 25,
+      "evPlus": "+1D4 EV par niveau",
+      "min": {},
+      "max": {
+        "cha": 10,
+        "int": 12,
+        "fo": 11
+      },
+      "at": 8,
+      "prd": 10,
+      "charge": 15,
+      "pr": 0,
+      "restr": [
+        "Erreur de la nature : −6 à toutes les interactions sociales",
+        "Incapable de manipuler la magie, mais peut porter armes et armures magiques"
+      ],
+      "nais": [
+        "Agoraphobie",
+        "Appel des renforts",
+        "Attire les monstres",
+        "Erreur de la nature",
+        "Fouiller dans les poubelles",
+        "Instinct de survie",
+        "Mendier et pleurnicher",
+        "Méfiance",
+        "Sentir des pieds",
+        "Vicieux"
+      ],
+      "choix": [
+        "Baragouinage des monstres",
+        "Bricolo du dimanche",
+        "Déplacement silencieux",
+        "Désamorcer",
+        "Escalader",
+        "Fariboles",
+        "Frapper lâchement"
+      ],
+      "notes": [],
+      "interdits": [
+        "mage",
+        "pretre",
+        "paladin"
+      ]
+    },
+    {
+      "id": "demi-elfe-nain",
+      "nom": "Demi-Elfe-Nain",
+      "sous": "Une curiosité…",
+      "ev": 30,
+      "evPlus": "",
+      "min": {
+        "int": 11,
+        "ad": 11,
+        "cou": 11,
+        "fo": 11
+      },
+      "max": {},
+      "at": 8,
+      "prd": 10,
+      "charge": 20,
+      "pr": 5,
+      "restr": [
+        "N'utilise pas les armes de bourrin",
+        "Objet magique : 1D6 pair il l'accepte, impair il le rejette",
+        "Erreur de la nature : −6 à toutes les interactions sociales"
+      ],
+      "nais": [
+        "Appel des renforts",
+        "Appel du tonneau",
+        "Erreur de la nature",
+        "Chouraver",
+        "Instinct du trésor",
+        "Méfiance",
+        "Pénible"
+      ],
+      "choix": [
+        "Arnaque et carambouille",
+        "Bourre-pif",
+        "Bricolo du dimanche",
+        "Chercher des noises",
+        "Déplacement silencieux",
+        "Fariboles",
+        "Forgeron",
+        "Jonglage et danse",
+        "Truc de mauviette",
+        "Tirer correctement"
+      ],
+      "notes": [],
+      "interdits": [
+        "mage"
+      ]
+    },
+    {
+      "id": "semi-elfe",
+      "nom": "Semi-Elfe",
+      "sous": "Elfe et semi-homme",
+      "ev": 28,
+      "evPlus": "",
+      "min": {
+        "int": 11,
+        "cou": 11
+      },
+      "max": {
+        "fo": 11
+      },
+      "at": 8,
+      "prd": 10,
+      "charge": 10,
+      "pr": 4,
+      "restr": [
+        "N'utilise pas les armes à 2 mains"
+      ],
+      "nais": [
+        "Appel des renforts",
+        "Attire les monstres",
+        "Bâtard",
+        "Chouraver",
+        "Cuistot",
+        "Méfiance",
+        "Résistance des pieds velus",
+        "Second petit déjeuner",
+        "Naïveté touchante"
+      ],
+      "choix": [
+        "Érudition",
+        "Fariboles",
+        "Frapper lâchement",
+        "Instinct du trésor",
+        "Mendier et pleurnicher",
+        "Tirer correctement"
+      ],
+      "notes": [
+        "Souvent pris pour un enfant un peu étrange"
+      ],
+      "interdits": []
+    },
+    {
+      "id": "demi-ogre",
+      "nom": "Demi-Ogre elfique",
+      "sous": "Le résidu de Gzor",
+      "ev": 38,
+      "evPlus": "",
+      "min": {
+        "fo": 13
+      },
+      "max": {
+        "int": 11,
+        "ad": 12,
+        "cha": 9
+      },
+      "at": 8,
+      "prd": 10,
+      "charge": 30,
+      "pr": 4,
+      "restr": [
+        "Objet magique : 1D6 pair il l'accepte, impair il le rejette",
+        "N'apprendra ni la lecture, ni la magie, ni la prêtrise",
+        "Erreur de la nature : −6 à toutes les interactions sociales"
+      ],
+      "nais": [
+        "Armes de bourrin",
+        "Appel du tonneau",
+        "Appel du ventre",
+        "Erreur de la nature",
+        "Intimider",
+        "Chouraver",
+        "Instinct de survie",
+        "Ventre sur pattes",
+        "Puissant +"
+      ],
+      "choix": [
+        "Bourre-pif",
+        "Chercher des noises",
+        "Jonglage et danse",
+        "Langue des monstres",
+        "Tirer correctement",
+        "Truc de mauviette"
+      ],
+      "notes": [],
+      "interdits": [
+        "mage",
+        "pretre",
+        "paladin"
+      ]
+    },
+    {
+      "id": "homme-bete",
+      "nom": "Homme-bête",
+      "sous": "6 versions, à tirer au D6",
+      "ev": 0,
+      "evPlus": "",
+      "min": {
+        "fo": 12
+      },
+      "max": {
+        "int": 10,
+        "cha": 10
+      },
+      "at": 8,
+      "prd": 10,
+      "charge": 0,
+      "pr": 0,
+      "restr": [
+        "Ne maîtrise ni la magie ni la prêtrise, n'apprend pas à lire",
+        "Casques et gantelets standard inadaptés (crâne, griffes)",
+        "Erreur de la nature : −6 à toutes les interactions sociales"
+      ],
+      "nais": [
+        "Agoraphobie",
+        "Erreur de la nature",
+        "Chercher des noises",
+        "Instinct de survie",
+        "Sentir des pieds",
+        "Tête vide",
+        "Comprendre les animaux"
+      ],
+      "choix": [
+        "Armes de bourrin",
+        "Baragouinage des monstres",
+        "Bourre-pif",
+        "Escalader",
+        "Fouiller dans les poubelles",
+        "Intimider",
+        "Nager",
+        "Tirer correctement",
+        "Truc de mauviette"
+      ],
+      "notes": [
+        "Flaire le sang ou le danger à 50 m, nyctalopie totale"
+      ],
+      "interdits": [
+        "mage",
+        "pretre",
+        "paladin"
+      ]
+    }
+  ],
+  "variantes": [
+    {
+      "id": "rat",
+      "nom": "Homme-Rat",
+      "ev": 35,
+      "mods": {
+        "fo": -2,
+        "cha": -3,
+        "ad": 2
+      },
+      "bonus": [
+        "Nager",
+        "Escalader"
+      ],
+      "notes": [
+        "Queue préhensile de 1,5 m"
+      ]
+    },
+    {
+      "id": "cochon",
+      "nom": "Homme-Cochon",
+      "ev": 44,
+      "mods": {
+        "fo": 1,
+        "int": -1,
+        "cha": -2
+      },
+      "bonus": [
+        "Second petit déjeuner",
+        "Truc de mauviette",
+        "Attire les monstres"
+      ],
+      "notes": []
+    },
+    {
+      "id": "bouc",
+      "nom": "Homme-Bouc",
+      "ev": 40,
+      "mods": {
+        "ad": 1,
+        "cou": 1,
+        "fo": -1
+      },
+      "bonus": [],
+      "notes": [
+        "Grandes cornes : −1 à toutes les épreuves en milieu confiné"
+      ]
+    },
+    {
+      "id": "loup",
+      "nom": "Homme-Loup",
+      "ev": 38,
+      "mods": {
+        "cha": 1
+      },
+      "bonus": [
+        "Nager",
+        "Déplacement silencieux"
+      ],
+      "notes": []
+    },
+    {
+      "id": "taureau",
+      "nom": "Homme-Taureau",
+      "ev": 45,
+      "mods": {
+        "fo": 2,
+        "cha": 1,
+        "ad": -2,
+        "int": -2
+      },
+      "bonus": [
+        "Intimider",
+        "Puissant +"
+      ],
+      "notes": [
+        "Grandes cornes : −2 à toutes les épreuves en milieu confiné"
+      ]
+    },
+    {
+      "id": "lezard",
+      "nom": "Homme-Lézard",
+      "ev": 40,
+      "mods": {
+        "ad": 1,
+        "int": 1,
+        "fo": 1,
+        "cha": -2
+      },
+      "bonus": [
+        "Intimider"
+      ],
+      "notes": [
+        "Queue préhensile de 1,5 m, n'attrape aucune maladie"
+      ]
+    }
+  ],
+  "metiers": [
+    {
+      "id": "assassin",
+      "nom": "Assassin, ninja",
+      "min": {
+        "ad": 13
+      },
+      "ev": "origine",
+      "at": 11,
+      "prd": 8,
+      "ea": 0,
+      "pr": 3,
+      "charge": 0,
+      "adj": null,
+      "restr": [],
+      "her": [
+        "Ambidextrie",
+        "Déplacement silencieux",
+        "Esquive",
+        "Frapper lâchement",
+        "Tirer correctement"
+      ],
+      "choix": [
+        "Chercher des noises",
+        "Chevaucher",
+        "Entretien du matériel",
+        "Érudition",
+        "Escalader",
+        "Méfiance",
+        "Nager",
+        "Ressemble à rien"
+      ],
+      "notes": [
+        "Accès aux coups spéciaux du ninja (limite : niveau +1)"
+      ],
+      "toutes": false
+    },
+    {
+      "id": "noble",
+      "nom": "Bourgeois, noble",
+      "min": {
+        "int": 10,
+        "cha": 11
+      },
+      "ev": "origine",
+      "at": 7,
+      "prd": 9,
+      "ea": 0,
+      "pr": 0,
+      "charge": 0,
+      "adj": null,
+      "restr": [
+        "Ne pourra jamais choisir un autre métier"
+      ],
+      "her": [
+        "Appel des renforts",
+        "Attire les monstres",
+        "Chevaucher",
+        "Érudition",
+        "J'ai le bras long",
+        "Pénible"
+      ],
+      "choix": [
+        "Arnaque et carambouille",
+        "Chef de groupe",
+        "Jonglage et danse",
+        "Méfiance",
+        "Nager",
+        "Runes bizarres"
+      ],
+      "notes": [
+        "Tire une 2e fois sa fortune ; possède une maison de ville et un cheval"
+      ],
+      "toutes": false
+    },
+    {
+      "id": "guerrier",
+      "nom": "Guerrier, gladiateur",
+      "min": {
+        "fo": 12,
+        "cou": 12
+      },
+      "ev": "plus5",
+      "at": null,
+      "prd": null,
+      "ea": 0,
+      "pr": -1,
+      "charge": 0,
+      "adj": {
+        "label": "Bonus de guerrier",
+        "plus": [
+          "at",
+          "prd"
+        ]
+      },
+      "restr": [],
+      "her": [
+        "Armes de bourrin",
+        "Bourre-pif",
+        "Entretien du matériel"
+      ],
+      "choix": [
+        "Ambidextrie",
+        "Chercher des noises",
+        "Chevaucher",
+        "Intimider",
+        "Tirer correctement",
+        "Truc de mauviette"
+      ],
+      "notes": [
+        "Coup spécial au choix : Coup de bouclier, Double attaque, Désarmement ou Œil de Robinoude",
+        "Peut aussi échanger 1 point entre AT et PRD au niveau 1"
+      ],
+      "toutes": false
+    },
+    {
+      "id": "ingenieur",
+      "nom": "Ingénieur",
+      "min": {
+        "ad": 11
+      },
+      "ev": "origine",
+      "at": null,
+      "prd": null,
+      "ea": 0,
+      "pr": 3,
+      "charge": 0,
+      "adj": {
+        "label": "Spécialisation technique",
+        "moins": [
+          "at",
+          "prd"
+        ],
+        "plus": [
+          "int",
+          "ad"
+        ]
+      },
+      "restr": [
+        "N'utilise pas les armes de bourrin"
+      ],
+      "her": [
+        "Bricolo du dimanche",
+        "Désamorcer",
+        "Forgeron",
+        "Ressemble à rien",
+        "Serrurier"
+      ],
+      "choix": [
+        "Appel des renforts",
+        "Chevaucher",
+        "Compagnonnage",
+        "Cuistot",
+        "Érudition",
+        "Nager",
+        "Premiers soins",
+        "Tannerie"
+      ],
+      "notes": [],
+      "toutes": false
+    },
+    {
+      "id": "mage",
+      "nom": "Mage, sorcier",
+      "min": {
+        "int": 12
+      },
+      "ev": "mage",
+      "at": null,
+      "prd": null,
+      "ea": 30,
+      "pr": 2,
+      "charge": 10,
+      "adj": null,
+      "restr": [
+        "Armes : bâton, poignard, dague ou gourdin uniquement",
+        "N'utilise ni arc, ni arbalète, ni bouclier"
+      ],
+      "her": [
+        "Érudition",
+        "Récupération",
+        "Runes bizarres"
+      ],
+      "choix": [
+        "Appel des renforts",
+        "Chef de groupe",
+        "Chevaucher",
+        "Fariboles",
+        "Langue des monstres",
+        "Premiers soins"
+      ],
+      "notes": [
+        "Doit choisir une spécialité magique",
+        "Au passage de niveau : +1D6 en EV OU en EA"
+      ],
+      "toutes": false
+    },
+    {
+      "id": "marchand",
+      "nom": "Marchand",
+      "min": {
+        "int": 12,
+        "cha": 11
+      },
+      "ev": "origine",
+      "at": null,
+      "prd": null,
+      "ea": 0,
+      "pr": 3,
+      "charge": 0,
+      "adj": {
+        "label": "Érudition du marchand",
+        "moins": [
+          "at",
+          "prd"
+        ],
+        "plus": [
+          "int",
+          "cha"
+        ]
+      },
+      "restr": [
+        "N'utilise pas les armes de bourrin"
+      ],
+      "her": [
+        "Appel des renforts",
+        "Arnaque et carambouille",
+        "Érudition",
+        "Fariboles",
+        "Méfiance"
+      ],
+      "choix": [
+        "Chef de groupe",
+        "Chevaucher",
+        "Compréhension de la pègre",
+        "Connaissances générales",
+        "Contact dans l'import-export",
+        "Cuistot",
+        "Débiteur de Caddyro",
+        "Forgeron",
+        "Instinct du trésor",
+        "Investissement hasardeux",
+        "Runes bizarres"
+      ],
+      "notes": [
+        "Possède une charrette, un cheval et une maison en village paumé"
+      ],
+      "toutes": false
+    },
+    {
+      "id": "menestrel",
+      "nom": "Ménestrel",
+      "min": {
+        "ad": 11,
+        "cha": 12
+      },
+      "ev": "origine",
+      "at": null,
+      "prd": null,
+      "ea": 0,
+      "pr": 2,
+      "charge": 0,
+      "adj": null,
+      "restr": [
+        "Armes : bâton, poignard, dague, gourdin ou instrument",
+        "N'utilise pas de bouclier"
+      ],
+      "her": [
+        "Attire les monstres",
+        "Chevaucher",
+        "Érudition",
+        "Fariboles",
+        "Jonglage et danse",
+        "Naïveté touchante"
+      ],
+      "choix": [
+        "Méfiance",
+        "Mendier et pleurnicher",
+        "Premiers soins",
+        "Runes bizarres",
+        "Tirer correctement"
+      ],
+      "notes": [
+        "Commence avec un instrument d'une valeur de 300 PO maximum"
+      ],
+      "toutes": false
+    },
+    {
+      "id": "paladin",
+      "nom": "Paladin",
+      "min": {
+        "cha": 11,
+        "cou": 12,
+        "fo": 9,
+        "int": 10
+      },
+      "ev": "paladin",
+      "at": null,
+      "prd": null,
+      "ea": 10,
+      "pr": 0,
+      "charge": 0,
+      "adj": null,
+      "restr": [
+        "Restrictions et avantages selon sa divinité (voir annexes du livret)",
+        "Doit posséder une relique de son dieu pour utiliser ses pouvoirs"
+      ],
+      "her": [
+        "Chevaucher",
+        "Entretien du matériel",
+        "Intimider",
+        "Récupération"
+      ],
+      "choix": [
+        "Armes de bourrin",
+        "Chercher des noises",
+        "Érudition",
+        "Fariboles",
+        "Premiers soins"
+      ],
+      "notes": [
+        "Doit choisir sa divinité avant de partir à l'aventure",
+        "Au passage de niveau : +1D6 en EV OU +1D4 en EA"
+      ],
+      "toutes": false
+    },
+    {
+      "id": "pirate",
+      "nom": "Pirate, flibustier",
+      "min": {
+        "ad": 11,
+        "cou": 11
+      },
+      "ev": "origine",
+      "at": null,
+      "prd": null,
+      "ea": 0,
+      "pr": 3,
+      "charge": 0,
+      "adj": null,
+      "restr": [
+        "Ne pourra jamais changer de métier",
+        "N'utilise pas les armes de bourrin"
+      ],
+      "her": [
+        "Appel des renforts",
+        "Appel du tonneau",
+        "Arnaque et carambouille",
+        "Chouraver",
+        "Escalader",
+        "Nager",
+        "Pied marin"
+      ],
+      "choix": [
+        "Compréhension de la pègre",
+        "Connaissances aquatiques",
+        "Détecter",
+        "Fouiller dans les poubelles",
+        "Instinct du trésor",
+        "Méfiance",
+        "Mendier et pleurnicher",
+        "Tirer correctement"
+      ],
+      "notes": [],
+      "toutes": false
+    },
+    {
+      "id": "pretre",
+      "nom": "Prêtre",
+      "min": {
+        "cha": 12
+      },
+      "ev": "origine",
+      "at": null,
+      "prd": null,
+      "ea": 20,
+      "pr": 0,
+      "charge": 0,
+      "adj": null,
+      "restr": [
+        "Armes et protections autorisées par son dieu uniquement",
+        "Doit respecter les règles de vie de son dieu"
+      ],
+      "her": [
+        "Érudition",
+        "Méfiance",
+        "Récupération"
+      ],
+      "choix": [
+        "Arnaque et carambouille",
+        "Chevaucher",
+        "Cuistot",
+        "Fariboles",
+        "Premiers soins",
+        "Radin",
+        "Runes bizarres"
+      ],
+      "notes": [
+        "Doit choisir sa divinité (voir annexes du livret)",
+        "Au passage de niveau : +1D6 en EV OU en EA"
+      ],
+      "toutes": false
+    },
+    {
+      "id": "ranger",
+      "nom": "Ranger",
+      "min": {
+        "ad": 10,
+        "cha": 10
+      },
+      "ev": "origine",
+      "at": null,
+      "prd": null,
+      "ea": 0,
+      "pr": 4,
+      "charge": 0,
+      "adj": null,
+      "restr": [],
+      "her": [
+        "Camping tout-terrain",
+        "Chevaucher",
+        "Déplacement silencieux",
+        "Détecter",
+        "Entretien du matériel",
+        "Nager",
+        "Pister"
+      ],
+      "choix": [
+        "Ambidextrie",
+        "Chef de groupe",
+        "Comprendre les animaux",
+        "Désamorcer",
+        "Érudition",
+        "Escalader",
+        "Méfiance",
+        "Premiers soins",
+        "Tirer correctement"
+      ],
+      "notes": [
+        "Au niveau 1, peut déplacer 1 point d'une caractéristique vers une autre"
+      ],
+      "toutes": false
+    },
+    {
+      "id": "voleur",
+      "nom": "Voleur",
+      "min": {
+        "ad": 12
+      },
+      "ev": "origine",
+      "at": null,
+      "prd": null,
+      "ea": 0,
+      "pr": 3,
+      "charge": 0,
+      "adj": null,
+      "restr": [],
+      "her": [
+        "Appel des renforts",
+        "Chouraver",
+        "Déplacement silencieux",
+        "Détecter",
+        "Serrurier"
+      ],
+      "choix": [
+        "Ambidextrie",
+        "Arnaque et carambouille",
+        "Chevaucher",
+        "Compréhension de la pègre",
+        "Désamorcer",
+        "Érudition",
+        "Escalader",
+        "Fouiller dans les poubelles",
+        "Frapper lâchement",
+        "Méfiance",
+        "Ressemble à rien",
+        "Tire-laine",
+        "Tirer correctement"
+      ],
+      "notes": [],
+      "toutes": false
+    },
+    {
+      "id": "traine-patins",
+      "nom": "Traîne-patins",
+      "min": {},
+      "ev": "moins2",
+      "at": 7,
+      "prd": 8,
+      "ea": 0,
+      "pr": 3,
+      "charge": 0,
+      "adj": null,
+      "restr": [
+        "Ne peut pas apprendre Érudition : ne lit pas les parchemins"
+      ],
+      "her": [
+        "Appel des renforts",
+        "Arnaque et carambouille",
+        "Mendier et pleurnicher",
+        "Escalader",
+        "Fouiller dans les poubelles",
+        "Ressemble à rien",
+        "Instinct de survie"
+      ],
+      "choix": [
+        "Compréhension de la pègre",
+        "Tire-laine",
+        "Bourre-pif",
+        "Cuistot",
+        "Frapper lâchement",
+        "Méfiance",
+        "Tirer correctement",
+        "Nager"
+      ],
+      "notes": [],
+      "toutes": true
+    }
+  ],
+  "glossaire": {
+    "agile": {
+      "carac": "",
+      "desc": "Presque impossible à saisir ou bloquer, il se faufile."
+    },
+    "ambidextrie": {
+      "carac": "AD",
+      "desc": "Deux armes en même temps en combat (avec restrictions)."
+    },
+    "appel des renforts": {
+      "carac": "",
+      "desc": "Fuir un combat sans risquer d'être blessé."
+    },
+    "chevaucher": {
+      "carac": "AD, CHA",
+      "desc": "Monter à cheval sans épreuve, ou tenter de monter d'autres animaux."
+    },
+    "chouraver": {
+      "carac": "AD",
+      "desc": "Bonus aux épreuves de vol à la tire."
+    },
+    "deplacement silencieux": {
+      "carac": "AD",
+      "desc": "Bonus en discrétion et infiltration."
+    },
+    "instinct du tresor": {
+      "carac": "",
+      "desc": "Sentir trésors et cachettes."
+    },
+    "super esquive": {
+      "carac": "",
+      "desc": "Peut attaquer et esquiver à tous les assauts."
+    },
+    "arnaque et carambouille": {
+      "carac": "CHA",
+      "desc": "Essayer d'arnaquer les marchands."
+    },
+    "erudition": {
+      "carac": "",
+      "desc": "Lire, écrire, compter (INT 10 minimum : OK avec 11)."
+    },
+    "fariboles": {
+      "carac": "",
+      "desc": "Convaincre en racontant n'importe quoi."
+    },
+    "mefiance": {
+      "carac": "INT",
+      "desc": "Savoir si un PNJ ment."
+    },
+    "comprendre les animaux": {
+      "carac": "",
+      "desc": "Dialogue avec les bêtes."
+    },
+    "desamorcer": {
+      "carac": "",
+      "desc": "Un piège non magique."
+    },
+    "detecter": {
+      "carac": "",
+      "desc": "Pièges, embûches, danger."
+    },
+    "mendier et pleurnicher": {
+      "carac": "CHA, INT",
+      "desc": "Gagner quelques PO entre deux aventures."
+    },
+    "serrurier": {
+      "carac": "",
+      "desc": "Crocheter portes et coffres."
+    },
+    "tirer correctement": {
+      "carac": "AD",
+      "desc": "Utiliser des armes de jet : arbalète, arc, javelot. Indispensable pour son arbalète."
+    },
+    "chef de groupe": {
+      "carac": "",
+      "desc": "Décisionnel, persuader les alliés."
+    },
+    "comprehension de la pegre": {
+      "carac": "",
+      "desc": "Bonus en marchandage illégal."
+    },
+    "connaissances generales": {
+      "carac": "",
+      "desc": "Bonus sur tous les jets de connaissance."
+    },
+    "contact dans l import export": {
+      "carac": "",
+      "desc": "Équipement non local."
+    },
+    "cuistot": {
+      "carac": "AD",
+      "desc": "Le groupe récupère des PV en plus quand il prépare un repas."
+    },
+    "debiteur de caddyro": {
+      "carac": "",
+      "desc": "Relance de jet journalière contre bénéfices."
+    },
+    "forgeron": {
+      "carac": "",
+      "desc": "Améliorer ou réparer des armes."
+    },
+    "investissement hasardeux": {
+      "carac": "",
+      "desc": "Gain d'argent passif possible."
+    },
+    "runes bizarres": {
+      "carac": "",
+      "desc": "Lire les langages compliqués."
+    },
+    "attire les monstres": {
+      "carac": "",
+      "desc": "Au début du combat, toujours pris pour cible par les ennemis."
+    },
+    "batard": {
+      "carac": "CHA",
+      "desc": "Malus en Charisme avec les semi-hommes et les elfes de tout type."
+    },
+    "resistance des pieds velus": {
+      "carac": "",
+      "desc": "Capacité spéciale pour résister aux malédictions."
+    },
+    "second petit dejeuner": {
+      "carac": "",
+      "desc": "Limite portée à 4 repas régénérants par jour."
+    },
+    "naivete touchante": {
+      "carac": "CHA",
+      "desc": "Son air gentil désamorce certains conflits."
+    },
+    "escalader": {
+      "carac": "AD",
+      "desc": "Grimper un peu partout avec un bonus."
+    },
+    "fouiller dans les poubelles": {
+      "carac": "INT",
+      "desc": "Meilleures chances de trouver des objets en fouillant."
+    },
+    "ressemble a rien": {
+      "carac": "",
+      "desc": "Se faire oublier, passer inaperçu."
+    },
+    "instinct de survie": {
+      "carac": "",
+      "desc": "Détecter de la nourriture à proximité."
+    },
+    "frapper lachement": {
+      "carac": "",
+      "desc": "Bonus aux dégâts et attaques à revers, lames courtes."
+    },
+    "tire laine": {
+      "carac": "",
+      "desc": "Gain d'or entre les aventures."
+    },
+    "bourre pif": {
+      "carac": "",
+      "desc": "Accès au combat à mains nues."
+    },
+    "erreur de la nature": {
+      "carac": "CHA",
+      "desc": "Toutes les origines non monstrueuses le rejettent : −6 à toutes les interactions sociales."
+    },
+    "puissant": {
+      "carac": "",
+      "desc": "Ses coups puissants imposent des malus de parade à ses adversaires (voir Grand Bestiaire)."
+    }
+  }
+}

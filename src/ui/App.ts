@@ -5,12 +5,20 @@ import { el } from './dom';
 import type { SoundButton } from './SoundButton';
 import { createVolumeSlider } from './VolumeSlider';
 
-/** Builds the whole board and keeps tiles in sync with what is playing. */
+/**
+ * The Musique tab: the three columns of pictograms, plus the master volume and
+ * the panic button, both dropped into the top bar so they stay clickable from
+ * any tab.
+ */
 export class App {
   private readonly buttons = new Map<string, SoundButton>();
   private readonly notices: HTMLElement;
 
-  constructor(root: HTMLElement, library: Library, engine: AudioEngine) {
+  /**
+   * @param view     the <section id="v-musique"> of index.html
+   * @param audioBar the container for the sound controls in the top bar
+   */
+  constructor(view: HTMLElement, audioBar: HTMLElement, library: Library, engine: AudioEngine) {
     const strips = CHANNELS.map(
       (channel) =>
         new ChannelStrip(
@@ -29,20 +37,12 @@ export class App {
 
     this.notices = el('div', { class: 'notices', role: 'status' });
 
-    root.replaceChildren(
-      el('header', { class: 'topbar' }, [
-        el('div', { class: 'brand' }, [
-          el('h1', {}, ['Naheulboard']),
-          el('p', {}, ['Le soundboard du Maître du Jeu']),
-        ]),
-        el('div', { class: 'topbar__controls' }, [
-          createVolumeSlider('général', engine.getVolume('master'), (gain) => engine.setVolume('master', gain)),
-          panic,
-        ]),
-      ]),
-      this.notices,
-      el('main', { class: 'board' }, strips.map((s) => s.element)),
+    audioBar.replaceChildren(
+      createVolumeSlider('général', engine.getVolume('master'), (gain) => engine.setVolume('master', gain)),
+      panic,
     );
+
+    view.replaceChildren(this.notices, el('div', { class: 'board' }, strips.map((s) => s.element)));
 
     engine.events.on((event) => {
       const button = this.buttons.get(event.soundId);

@@ -1,0 +1,624 @@
+{
+  "heros": {
+    "tiny-parker": {
+      "signes": "",
+      "xp": 0,
+      "niveau": 1,
+      "eaMax": 0,
+      "ea": 0,
+      "prNat": 0,
+      "prMag": 0,
+      "or": 0,
+      "argent": 0,
+      "thritil": 0,
+      "berylium": 0,
+      "armes": [],
+      "protections": [],
+      "sac": [],
+      "effets": [],
+      "joueur": "",
+      "ordre": 1,
+      "nom": "Tiny Parker",
+      "origine": "Gnôme des forêts",
+      "metier": "Marchand",
+      "sexe": "",
+      "cou": 8,
+      "int": 13,
+      "cha": 13,
+      "ad": 13,
+      "fo": 8,
+      "at": 10,
+      "prd": 8,
+      "rm": 10,
+      "evMax": 15,
+      "ev": 15,
+      "destin": 1,
+      "destinMax": 1,
+      "reperes": [
+        {
+          "texte": "Ne parle pas la langue commune"
+        },
+        {
+          "texte": "Charge max : 2 kg"
+        },
+        {
+          "texte": "Armes : poignards et couteaux seulement, pas d'arme de bourrin"
+        },
+        {
+          "texte": "PR naturelle max : 2 (Gnôme) / 3 (Marchand)"
+        },
+        {
+          "texte": "Pas de magie, sauf sur arme ou protection"
+        }
+      ],
+      "competences": [
+        {
+          "acquise": true,
+          "nom": "Agile",
+          "source": "Origine",
+          "carac": "",
+          "desc": "Presque impossible à saisir ou bloquer, il se faufile."
+        },
+        {
+          "acquise": true,
+          "nom": "Ambidextrie",
+          "source": "Origine",
+          "carac": "AD",
+          "desc": "Deux armes en même temps en combat (avec restrictions)."
+        },
+        {
+          "acquise": true,
+          "nom": "Appel des renforts",
+          "source": "Origine / Métier",
+          "carac": "",
+          "desc": "Fuir un combat sans risquer d'être blessé."
+        },
+        {
+          "acquise": true,
+          "nom": "Chevaucher",
+          "source": "Origine",
+          "carac": "AD, CHA",
+          "desc": "Monter à cheval sans épreuve, ou tenter de monter d'autres animaux."
+        },
+        {
+          "acquise": true,
+          "nom": "Chouraver",
+          "source": "Origine",
+          "carac": "AD",
+          "desc": "Bonus aux épreuves de vol à la tire."
+        },
+        {
+          "acquise": true,
+          "nom": "Déplacement silencieux",
+          "source": "Origine",
+          "carac": "AD",
+          "desc": "Bonus en discrétion et infiltration."
+        },
+        {
+          "acquise": true,
+          "nom": "Instinct du trésor",
+          "source": "Origine",
+          "carac": "INT",
+          "desc": "Bonus pour trouver des trésors."
+        },
+        {
+          "acquise": true,
+          "nom": "Super esquive",
+          "source": "Origine",
+          "carac": "",
+          "desc": "Peut attaquer et esquiver à tous les assauts."
+        },
+        {
+          "acquise": true,
+          "nom": "Arnaque et carambouille",
+          "source": "Métier",
+          "carac": "CHA",
+          "desc": "Baratiner les autres marchands."
+        },
+        {
+          "acquise": true,
+          "nom": "Érudition",
+          "source": "Métier",
+          "carac": "INT",
+          "desc": "Sait lire, écrire et compter sans épreuve."
+        },
+        {
+          "acquise": true,
+          "nom": "Fariboles",
+          "source": "Métier",
+          "carac": "INT, CHA",
+          "desc": "Bonus de parlotte pour déstabiliser, distraire, captiver."
+        },
+        {
+          "acquise": true,
+          "nom": "Méfiance",
+          "source": "Métier",
+          "carac": "INT",
+          "desc": "Savoir si un autre personnage ment."
+        },
+        {
+          "acquise": false,
+          "nom": "Comprendre les animaux",
+          "source": "Origine",
+          "carac": "",
+          "desc": "Dialogue avec les bêtes."
+        },
+        {
+          "acquise": false,
+          "nom": "Connaissances de la nature",
+          "source": "Origine",
+          "carac": "",
+          "desc": ""
+        },
+        {
+          "acquise": false,
+          "nom": "Désamorcer",
+          "source": "Origine",
+          "carac": "",
+          "desc": "Un piège non magique."
+        },
+        {
+          "acquise": false,
+          "nom": "Détecter",
+          "source": "Origine",
+          "carac": "",
+          "desc": "Pièges, embûches, danger."
+        },
+        {
+          "acquise": false,
+          "nom": "Escalader",
+          "source": "Origine",
+          "carac": "",
+          "desc": ""
+        },
+        {
+          "acquise": false,
+          "nom": "Jonglage et danse",
+          "source": "Origine",
+          "carac": "",
+          "desc": ""
+        },
+        {
+          "acquise": false,
+          "nom": "Mendier et pleurnicher",
+          "source": "Origine",
+          "carac": "",
+          "desc": "Gagner des PO entre deux aventures."
+        },
+        {
+          "acquise": false,
+          "nom": "Nager",
+          "source": "Origine",
+          "carac": "",
+          "desc": ""
+        },
+        {
+          "acquise": false,
+          "nom": "Serrurier",
+          "source": "Origine",
+          "carac": "",
+          "desc": "Crocheter portes et coffres."
+        },
+        {
+          "acquise": false,
+          "nom": "Tirer correctement",
+          "source": "Origine",
+          "carac": "",
+          "desc": "Utiliser des armes de jet."
+        },
+        {
+          "acquise": false,
+          "nom": "Chef de groupe",
+          "source": "Métier",
+          "carac": "",
+          "desc": "Décisionnel, persuader les alliés."
+        },
+        {
+          "acquise": false,
+          "nom": "Compréhension de la pègre",
+          "source": "Métier",
+          "carac": "",
+          "desc": "Bonus en marchandage illégal."
+        },
+        {
+          "acquise": false,
+          "nom": "Connaissances générales",
+          "source": "Métier",
+          "carac": "",
+          "desc": "Bonus sur tous les jets de connaissance."
+        },
+        {
+          "acquise": false,
+          "nom": "Contact dans l'import-export",
+          "source": "Métier",
+          "carac": "",
+          "desc": "Équipement non local."
+        },
+        {
+          "acquise": false,
+          "nom": "Cuistot",
+          "source": "Métier",
+          "carac": "",
+          "desc": "Améliore les repas et la récupération."
+        },
+        {
+          "acquise": false,
+          "nom": "Débiteur de Caddyro",
+          "source": "Métier",
+          "carac": "",
+          "desc": "Relance de jet journalière contre bénéfices."
+        },
+        {
+          "acquise": false,
+          "nom": "Forgeron",
+          "source": "Métier",
+          "carac": "",
+          "desc": "Améliorer ou réparer des armes."
+        },
+        {
+          "acquise": false,
+          "nom": "Investissement hasardeux",
+          "source": "Métier",
+          "carac": "",
+          "desc": "Gain d'argent passif possible."
+        },
+        {
+          "acquise": false,
+          "nom": "Runes bizarres",
+          "source": "Métier",
+          "carac": "",
+          "desc": "Lire les langages compliqués."
+        }
+      ],
+      "accroches": [
+        {
+          "declencheur": "Il faut parler à quelqu'un",
+          "mots": "dialogue, discussion, négociation, pnj, marchand",
+          "reaction": "Tiny ne parle pas la langue commune ! Un marchand qui négocie par gestes, dessins et grimaces : laisse le joueur mimer et fais réagir les PNJ complètement à côté. À décider avec le joueur : qui lui sert d'interprète ?"
+        },
+        {
+          "declencheur": "Un marchand, une boutique, un objet à vendre",
+          "mots": "marché, marchand, boutique, vendre, acheter, argent, or",
+          "reaction": "« C'est une affaire ! » Arnaque et carambouille (CHA), Fariboles. Prévois un marchand rival qui essaie de l'arnaquer en retour."
+        },
+        {
+          "declencheur": "Un coffre, une cachette, un butin",
+          "mots": "trésor, coffre, cachette, butin",
+          "reaction": "Instinct du trésor (INT) : il flaire la planque. Mais il ne porte que 2 kg… qui porte le reste ?"
+        },
+        {
+          "declencheur": "Un PNJ raconte des salades",
+          "mots": "mensonge, ment, menteur, interrogatoire",
+          "reaction": "Méfiance (INT) : il sait quand on lui ment, même s'il ne comprend pas tout ce qu'on dit."
+        },
+        {
+          "declencheur": "Une bestiole, une monture",
+          "mots": "animal, monture, cheval, bête",
+          "reaction": "Chevaucher (AD, CHA) : il peut tenter de monter n'importe quoi. Un sanglier, une chèvre, un ours mal luné…"
+        },
+        {
+          "declencheur": "Se faufiler, passer par un trou",
+          "mots": "discrétion, infiltration, garde, conduit, serrure",
+          "reaction": "Déplacement silencieux (AD), contorsionniste, Agile : impossible à attraper. Le petit qui passe là où personne ne passe."
+        },
+        {
+          "declencheur": "Un livre, un contrat, une inscription",
+          "mots": "lire, écrit, livre, contrat, parchemin",
+          "reaction": "Érudition : il sait lire et compter. Le seul qui comprend le contrat… sans pouvoir l'expliquer à voix haute."
+        },
+        {
+          "declencheur": "Une bourse qui dépasse",
+          "mots": "vol, bourse, pickpocket, foule",
+          "reaction": "Chouraver (AD) : bonus au vol à la tire."
+        },
+        {
+          "declencheur": "Le combat éclate",
+          "mots": "combat, bagarre, monstre, embuscade",
+          "reaction": "15 EV seulement : fragile. Super esquive (attaque et esquive à chaque assaut), Appel des renforts pour fuir sans blessure. Poignards et couteaux uniquement."
+        },
+        {
+          "declencheur": "Un objet magique",
+          "mots": "magie, sort, objet magique",
+          "reaction": "N'utilise pas de magie, sauf sur arme ou protection."
+        }
+      ],
+      "background": "Petit gnôme des forêts du Nord, ravi d'avoir trouvé des copains pour partir à l'aventure. Il se nourrit de restes trouvés un peu partout et espère que personne ne va le frapper, car il ne se sent pas très solide. Marchand dans l'âme : il aime l'argent et le commerce, sa phrase fétiche est « Je vous assure, c'est une affaire ! ».\n\nÀ compléter avec le joueur : un désir, une peur, un lien (dette, rival, client floué…).",
+      "notes": "Fiche à compléter : armes, protections, équipement, richesses, compétences choisies à la création.",
+      "kind": "heros"
+    },
+    "julodion": {
+      "signes": "",
+      "xp": 0,
+      "niveau": 1,
+      "eaMax": 0,
+      "ea": 0,
+      "prNat": 0,
+      "prMag": 0,
+      "or": 0,
+      "argent": 0,
+      "thritil": 0,
+      "berylium": 0,
+      "armes": [],
+      "protections": [],
+      "sac": [],
+      "effets": [],
+      "joueur": "",
+      "ordre": 2,
+      "nom": "Julodion Largebide Chasse Lapin de Sous la Colline",
+      "origine": "Semi-elfe",
+      "metier": "Traîne-patins",
+      "sexe": "",
+      "cou": 12,
+      "int": 11,
+      "cha": 10,
+      "ad": 9,
+      "fo": 8,
+      "at": 7,
+      "prd": 8,
+      "rm": 10,
+      "evMax": 26,
+      "ev": 26,
+      "destin": 1,
+      "destinMax": 1,
+      "reperes": [
+        {
+          "texte": "Attire les monstres : ciblé en premier au début de chaque combat"
+        },
+        {
+          "texte": "Bâtard : malus CHA face aux semi-hommes et aux elfes"
+        },
+        {
+          "texte": "Charge max : 10 kg, pas d'arme à deux mains"
+        },
+        {
+          "texte": "PR naturelle max : 4 (Semi-elfe) / 3 (Traîne-patins)"
+        },
+        {
+          "texte": "Souvent pris pour un enfant en ville"
+        }
+      ],
+      "competences": [
+        {
+          "acquise": true,
+          "nom": "Appel des renforts",
+          "source": "Origine / Métier",
+          "carac": "",
+          "desc": "Fuir un combat sans risquer d'être blessé."
+        },
+        {
+          "acquise": true,
+          "nom": "Attire les monstres",
+          "source": "Origine",
+          "carac": "",
+          "desc": "Au début du combat, toujours pris pour cible par les ennemis."
+        },
+        {
+          "acquise": true,
+          "nom": "Bâtard",
+          "source": "Origine",
+          "carac": "CHA",
+          "desc": "Malus en Charisme avec les semi-hommes et les elfes de tout type."
+        },
+        {
+          "acquise": true,
+          "nom": "Chouraver",
+          "source": "Origine",
+          "carac": "AD",
+          "desc": "Bonus aux épreuves de vol à la tire."
+        },
+        {
+          "acquise": true,
+          "nom": "Cuistot",
+          "source": "Origine",
+          "carac": "AD",
+          "desc": "Le groupe récupère des PV en plus quand il prépare un repas."
+        },
+        {
+          "acquise": true,
+          "nom": "Méfiance",
+          "source": "Origine",
+          "carac": "INT",
+          "desc": "Savoir si un PNJ ment."
+        },
+        {
+          "acquise": true,
+          "nom": "Résistance des pieds velus",
+          "source": "Origine",
+          "carac": "",
+          "desc": "Capacité spéciale pour résister aux malédictions."
+        },
+        {
+          "acquise": true,
+          "nom": "Second petit déjeuner",
+          "source": "Origine",
+          "carac": "",
+          "desc": "Limite portée à 4 repas régénérants par jour."
+        },
+        {
+          "acquise": true,
+          "nom": "Naïveté touchante",
+          "source": "Origine",
+          "carac": "CHA",
+          "desc": "Son air gentil désamorce certains conflits."
+        },
+        {
+          "acquise": true,
+          "nom": "Arnaque et carambouille",
+          "source": "Métier",
+          "carac": "CHA",
+          "desc": "Essayer d'arnaquer les marchands."
+        },
+        {
+          "acquise": true,
+          "nom": "Mendier et pleurnicher",
+          "source": "Métier",
+          "carac": "CHA, INT",
+          "desc": "Gagner quelques PO entre deux aventures."
+        },
+        {
+          "acquise": true,
+          "nom": "Escalader",
+          "source": "Métier",
+          "carac": "AD",
+          "desc": "Grimper un peu partout avec un bonus."
+        },
+        {
+          "acquise": true,
+          "nom": "Fouiller dans les poubelles",
+          "source": "Métier",
+          "carac": "INT",
+          "desc": "Meilleures chances de trouver des objets en fouillant."
+        },
+        {
+          "acquise": true,
+          "nom": "Ressemble à rien",
+          "source": "Métier",
+          "carac": "",
+          "desc": "Se faire oublier, passer inaperçu."
+        },
+        {
+          "acquise": true,
+          "nom": "Instinct de survie",
+          "source": "Métier",
+          "carac": "",
+          "desc": "Détecter de la nourriture à proximité."
+        },
+        {
+          "acquise": false,
+          "nom": "Érudition",
+          "source": "Origine",
+          "carac": "",
+          "desc": "Lire, écrire, compter (INT 10 minimum : OK avec 11)."
+        },
+        {
+          "acquise": false,
+          "nom": "Fariboles",
+          "source": "Origine",
+          "carac": "",
+          "desc": "Convaincre en racontant n'importe quoi."
+        },
+        {
+          "acquise": false,
+          "nom": "Frapper lâchement",
+          "source": "Origine / Métier",
+          "carac": "",
+          "desc": "Bonus aux dégâts et attaques à revers, lames courtes."
+        },
+        {
+          "acquise": false,
+          "nom": "Instinct du trésor",
+          "source": "Origine",
+          "carac": "",
+          "desc": "Sentir trésors et cachettes."
+        },
+        {
+          "acquise": false,
+          "nom": "Tirer correctement",
+          "source": "Origine / Métier",
+          "carac": "",
+          "desc": "Utiliser des armes de jet."
+        },
+        {
+          "acquise": false,
+          "nom": "Compréhension de la pègre",
+          "source": "Métier",
+          "carac": "",
+          "desc": "Bonus en marchandage illégal."
+        },
+        {
+          "acquise": false,
+          "nom": "Tire-laine",
+          "source": "Métier",
+          "carac": "",
+          "desc": "Gain d'or entre les aventures."
+        },
+        {
+          "acquise": false,
+          "nom": "Bourre-pif",
+          "source": "Métier",
+          "carac": "",
+          "desc": "Accès au combat à mains nues."
+        },
+        {
+          "acquise": false,
+          "nom": "Nager",
+          "source": "Métier",
+          "carac": "",
+          "desc": ""
+        }
+      ],
+      "accroches": [
+        {
+          "declencheur": "Le combat commence",
+          "mots": "combat, bagarre, monstre, embuscade",
+          "reaction": "Attire les monstres : c'est lui que les ennemis visent d'abord (heureusement, 26 EV). Avec Appel des renforts, il peut fuir sans être blessé… avec la horde à ses trousses."
+        },
+        {
+          "declencheur": "Un elfe ou un semi-homme",
+          "mots": "elfe, semi-homme, pieds-velus, famille, origines",
+          "reaction": "Bâtard : malus en CHA. Ses origines sont floues : un PNJ qui connaît les Largebide de Sous la Colline, c'est une quête toute trouvée."
+        },
+        {
+          "declencheur": "La taverne, la ville",
+          "mots": "taverne, ville, auberge, bière, garde",
+          "reaction": "On le prend pour un enfant : on refuse de le servir, on le gronde. Naïveté touchante (CHA) peut retourner la situation."
+        },
+        {
+          "declencheur": "Un repas, un campement",
+          "mots": "repas, cuisine, nourriture, campement, faim",
+          "reaction": "Cuistot (AD) : PV en plus pour tout le groupe. Second petit déjeuner : jusqu'à 4 repas régénérants par jour. Instinct de survie pour trouver à manger."
+        },
+        {
+          "declencheur": "Une malédiction",
+          "mots": "malédiction, maudit, objet louche, magie",
+          "reaction": "Résistance des pieds velus : il résiste mieux que les autres. Le candidat idéal pour toucher l'idole suspecte."
+        },
+        {
+          "declencheur": "Un marchand à plumer",
+          "mots": "marché, marchand, vendre, acheter, argent",
+          "reaction": "Arnaque et carambouille (CHA), comme Tiny. Concurrence ou duo d'escrocs ?"
+        },
+        {
+          "declencheur": "Des poubelles, une décharge",
+          "mots": "poubelle, ordures, fouiller, égout, décharge",
+          "reaction": "Fouiller dans les poubelles (INT) : il trouve un objet utile… ou dégoûtant."
+        },
+        {
+          "declencheur": "Un mur, une falaise, une fenêtre",
+          "mots": "escalade, mur, falaise, grimper, fenêtre",
+          "reaction": "Escalader (AD) avec bonus."
+        },
+        {
+          "declencheur": "Se faire oublier",
+          "mots": "discrétion, cacher, foule, garde",
+          "reaction": "Ressemble à rien : il passe inaperçu. Ironique pour quelqu'un qui attire tous les monstres en combat."
+        },
+        {
+          "declencheur": "Un PNJ ment",
+          "mots": "mensonge, ment, menteur",
+          "reaction": "Méfiance (INT) : il le sent, comme Tiny."
+        },
+        {
+          "declencheur": "Une bourse qui dépasse",
+          "mots": "vol, bourse, pickpocket, foule",
+          "reaction": "Chouraver (AD) : bonus au vol à la tire."
+        },
+        {
+          "declencheur": "Entre deux aventures",
+          "mots": "repos, entre-deux, mendier, argent",
+          "reaction": "Mendier et pleurnicher (CHA, INT) : quelques PO gagnées."
+        }
+      ],
+      "background": "Croisement rarissime entre un semi-homme et un elfe. Les gens le regardent bizarrement, ou le prennent pour un enfant en train de faire une bêtise. Les circonstances de sa naissance sont floues, mais il a hérité du courage des Pieds-Velus (COU 12, le plus brave du groupe). La vie ne lui a pas fait de cadeaux : il fait son bonhomme de chemin au gré des saisons et des problèmes.\n\nÀ compléter avec le joueur : qui sont ses parents ? un désir, une peur, un lien.",
+      "notes": "Fiche à compléter : armes, protections, équipement, richesses, compétences choisies à la création.",
+      "kind": "heros"
+    }
+  },
+  "etat": {
+    "notes": "",
+    "journal": [],
+    "spotlight": {}
+  },
+  "lastExport": null,
+  "migrations": []
+}

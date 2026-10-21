@@ -1,6 +1,7 @@
 # Naheulboard 🍺
 
-The Game Master's soundboard for *Le Donjon de Naheulbeuk*: clickable icons to play music, atmospheres, sound effects, and comedic sounds, **all mixable simultaneously**.
+The Game Master's screen for *Le Donjon de Naheulbeuk*: character sheets, role-playing triggers,
+a campaign journal and a soundboard, all in one page with tabs.
 
 ## Getting Started
 
@@ -18,9 +19,52 @@ npm install
 npm run dev
 ```
 
-Your browser opens at http://localhost:5173. Click “Traveling Party,” then “Tavern,” then “Mug Set Down”: you've got your first tavern.
+Your browser opens at http://localhost:5173 on the **Personnages** tab, with Tiny and Julodion
+already there. Switch to **Musique**, click “Taverne Tranquille,” then “Taverne Discussions”:
+you've got your first tavern.
 
 In IntelliJ (Ultimate) or WebStorm: *File → Open* this folder, then run the `dev` script from the npm tab.
+
+## The 5 Tabs
+
+| Tab              | What it does                                                                                                   |
+|------------------|----------------------------------------------------------------------------------------------------------------|
+| **Personnages**  | Heroes, enemies and NPCs. EV/EA gauges, backpack weight, bonuses and penalties, XP, destiny points, full sheets. |
+| **Déclencheurs** | Full-text search over the heroes' profiles and role-playing hooks: “what does this scene offer my players?”      |
+| **Journal**      | Notes for the current session, archived with their date.                                                        |
+| **Musique**      | The soundboard: music, ambiances and comic sounds, all mixable simultaneously.                                  |
+| **Sauvegarde**   | The campaign's save file: save, save as, load, undo the last load, reset.                                       |
+
+The master volume and the red **Tout couper** button sit in the top bar, so you can cut the sound
+from any tab. The save indicator next to them tells you the campaign is written to this browser.
+
+Everything is local: no server, no account, no network. The campaign lives in the browser's
+`localStorage` (key `naheulbeuk-mj-v1`) — **save it to a file at the end of a session**, the
+Sauvegarde tab nags you about it after a week.
+
+### The save file
+
+The current save file is the one you last loaded or saved to. **Sauvegarder** — one click, at the
+top of the Personnages tab and in the Sauvegarde tab — overwrites it; **Enregistrer sous…** picks
+another file, which then becomes the current one. The file format is unchanged (version 12).
+
+Chrome and Edge really do overwrite the file (File System Access API; the handle is kept in
+IndexedDB, so the file is still current after a reload — the browser asks once for permission).
+Firefox and Safari have no such API: there, saving downloads a file under the remembered name and
+says so, and you replace the old one yourself.
+
+## Characters
+
+* **Heroes:** “+ Ajouter un héros” opens the wizard from the official booklet: origin, rolled
+  attributes (criteria are checked for you), profession, skills. It computes EV, AT, PRD, EA,
+  maximum carry weight and maximum PR.
+* **Enemies:** type a name in the bestiary field (299 creatures) and add N numbered copies, with
+  their stats filled in. Damage, deaths and the XP they are worth are tracked for you.
+* **NPCs:** attitude, voice, motivation, secret — enough to replay the innkeeper identically.
+* Each sheet (“Ouvrir la fiche”) has 5 tabs: attributes, skills, equipment (with a 256-entry
+  weapon and armour catalogue), role-playing, notes.
+
+Dice are **not** rolled here: you roll them on the table.
 
 ## The 3 Types of Sounds
 
@@ -41,7 +85,7 @@ The red **Cut All** button fades everything out over one second.
 { "id": "rot-de-nain", "label": "Dwarf Burp", "icon": "🧔", "channel": "son", "files": ["sons/rot.ogg"], "volume": 0.8 }
 ```
 
-3. Reload the page. If the JSON file contains an error, the app displays a list of all issues that need fixing.
+3. Reload the page. If the JSON file contains an error, the Musique tab lists all the issues that need fixing — the rest of the screen keeps working.
 
 ### Icons
 
@@ -63,7 +107,7 @@ Where to find royalty-free sounds: Tabletop Audio (RPG atmospheres), freesound.o
 ## Game Day
 
 * `npm run dev` is all you need. Connect your laptop to a speaker and turn up the speaker's volume, not the sliders.
-* To control it from a tablet on the same Wi-Fi network: run `npm run dev:lan`, then open the “Network” address displayed in the terminal on your tablet.
+* To control it from a tablet on the same Wi-Fi network: run `npm run dev:lan`, then open the “Network” address displayed in the terminal on your tablet. Careful: the campaign is stored *per browser*, so the tablet starts from a fresh screen unless you import a backup file there.
 * Production build: `npm run build` followed by `npm run preview`.
 
 ## Development
@@ -75,3 +119,15 @@ npm test           # unit tests
 npm run typecheck  # TypeScript type checking
 npm run build      # production build in dist/
 ```
+
+Two halves share one page (see `src/main.ts`):
+
+* `src/mj/mjScreen.js` — the GM screen, a 1:1 port of the standalone
+  `ecran-mj-naheulbeuk_v12.html` tool. Deliberately kept in vanilla JavaScript; its public
+  contract is `src/mj/mjScreen.d.ts`, its reference data `src/mj/data/*.json`, and
+  [`ECRAN-MJ-CONTEXTE.md`](ECRAN-MJ-CONTEXTE.md) documents its model.
+* `src/{audio,ui,library,model}/` — the soundboard, in strict TypeScript.
+
+`ecran-mj-naheulbeuk_v12.html` is still there, untouched: the original standalone version, kept as
+a reference and a fallback. It reads and writes the same `localStorage` key and the same export
+format (version 12), so you can switch between the two. Delete it whenever you feel like it.

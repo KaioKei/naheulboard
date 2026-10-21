@@ -1,169 +1,153 @@
-/* Naheulboard: tavern-at-night theme. All colours are tokens below. */
+/*
+ * Soundboard: the Musique tab and the sound controls in the top bar.
+ * Loaded after src/mj/mj.css, whose tokens it reuses (--paper, --surface,
+ * --line, --ink, --muted, --accent, --ev, --r, --f-*). The only new tokens are
+ * below: one colour per channel, plus the tile parchment.
+ */
 :root {
-  --bg: #17110d;
-  --panel: #241b15;
-  --panel-edge: #3a2c22;
-  --parchment: #eadcbc;
-  --parchment-dim: #d8c7a1;
-  --ink: #2b1d12;
-  --text: #f1e6cf;
-  --text-dim: #b9a88c;
-  --gold: #e0a84a;
-  --danger: #c24a3a;
+  /* One colour per channel, declined in both themes. */
+  --ch-musique: #6B4FA8;
+  --ch-ambiance: #1F7A6B;
+  --ch-son: #9E600C;
 
-  --ch-musique: #9b7bd1;
-  --ch-ambiance: #4fa898;
-  --ch-son: #e0a84a;
-
-  --radius: 10px;
-  --serif: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
-  --sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-
-  color-scheme: dark;
+  /* The pictograms are drawn on parchment: tiles stay light in both themes,
+     otherwise the icons become unreadable. */
+  --tile: #EADCBC;
+  --tile-hover: #F5EAD2;
+  --tile-ink: #2B1D12;
 }
 
-* {
-  box-sizing: border-box;
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --ch-musique: #B59BE0;
+    --ch-ambiance: #5FC2AE;
+    --ch-son: #E3A64A;
+  }
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--sans);
-  -webkit-tap-highlight-color: transparent;
+:root[data-theme='dark'] {
+  --ch-musique: #B59BE0;
+  --ch-ambiance: #5FC2AE;
+  --ch-son: #E3A64A;
 }
 
-#app {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 16px;
-}
+/* ---- Sound controls in the top bar ------------------------------------ */
 
-/* ---- Top bar ---------------------------------------------------------- */
-
-.topbar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px 24px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--panel-edge);
-  margin-bottom: 16px;
-}
-
-.brand h1 {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: 2rem;
-  color: var(--gold);
-  letter-spacing: 0.02em;
-}
-
-.brand p {
-  margin: 2px 0 0;
-  color: var(--text-dim);
-  font-style: italic;
-}
-
-.topbar__controls {
+.bar-right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: flex-end;
+  gap: 8px 14px;
   flex-wrap: wrap;
+}
+
+.audio-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.volume {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 150px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.volume input[type='range'] {
+  flex: 1 1 90px;
+  min-width: 0;
+  accent-color: var(--accent);
+}
+
+.volume__value {
+  width: 3ch;
+  text-align: right;
+  font-family: var(--f-num);
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
 }
 
 .panic {
-  font: 600 1rem var(--sans);
+  border: 1px solid var(--ev);
+  background: var(--ev);
   color: #fff;
-  background: var(--danger);
-  border: none;
-  border-radius: var(--radius);
-  padding: 10px 16px;
+  font-family: var(--f-sc);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 5px 12px;
+  border-radius: 8px;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .panic:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.08);
 }
 
 .panic:active {
   transform: translateY(1px);
 }
 
-/* ---- Volume slider ---------------------------------------------------- */
-
-.volume {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  min-width: 180px;
-}
-
-.volume input {
-  flex: 1;
-  accent-color: var(--accent, var(--gold));
-}
-
-.volume__value {
-  width: 2.5ch;
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-  color: var(--text-dim);
-  font-size: 0.85rem;
-}
-
-/* ---- Board & strips --------------------------------------------------- */
+/* ---- The Musique tab: three columns ----------------------------------- */
 
 .board {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 14px;
+  align-items: start;
 }
 
 .strip {
-  --accent: var(--gold);
-  background: var(--panel);
-  border: 1px solid var(--panel-edge);
-  border-top: 4px solid var(--accent);
-  border-radius: 4px 4px var(--radius) var(--radius);
-  padding: 14px;
+  --ch: var(--accent);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--ch);
+  border-radius: 4px 4px var(--r) var(--r);
+  padding: 12px 14px;
+  min-width: 0;
 }
 
-.strip[data-channel='musique'] { --accent: var(--ch-musique); }
-.strip[data-channel='ambiance'] { --accent: var(--ch-ambiance); }
-.strip[data-channel='son'] { --accent: var(--ch-son); }
+.strip[data-channel='musique'] { --ch: var(--ch-musique); }
+.strip[data-channel='ambiance'] { --ch: var(--ch-ambiance); }
+.strip[data-channel='son'] { --ch: var(--ch-son); }
 
 .strip__header {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .strip__title {
   margin: 0;
-  font-family: var(--serif);
-  font-size: 1.35rem;
-  color: var(--accent);
+  font-family: var(--f-display);
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--ch);
 }
 
 .strip__hint {
-  margin: 2px 0 10px;
-  min-height: 2.4em; /* keeps sliders aligned across strips */
-  font-size: 0.85rem;
-  color: var(--text-dim);
+  margin: 4px 0 8px;
+  min-height: 2.6em; /* keeps the sliders aligned across columns */
+  font-size: 14px;
+  color: var(--muted);
 }
 
 .strip__grid {
   display: grid;
-  /* Fits up to 5 tiles per row on a full-width board, fewer on narrower screens. */
-  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
-  gap: 10px;
+  /* Wide enough for "Taverne Entrainante" to fit without breaking the word. */
+  grid-template-columns: repeat(auto-fill, minmax(94px, 1fr));
+  gap: 8px;
 }
 
 .strip__empty {
   grid-column: 1 / -1;
-  color: var(--text-dim);
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
   font-style: italic;
 }
 
@@ -175,31 +159,30 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 5px;
   min-height: 96px;
   padding: 10px 6px;
-  background: var(--parchment);
-  color: var(--ink);
+  background: var(--tile);
+  color: var(--tile-ink);
   border: 3px solid transparent;
-  border-radius: var(--radius);
+  border-radius: var(--r);
   cursor: pointer;
-  font: 600 0.85rem/1.2 var(--sans);
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1.2;
   text-align: center;
   transition: transform 0.08s, background-color 0.2s, border-color 0.2s;
   user-select: none;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .tile:hover {
-  background: #f5ead2;
+  background: var(--tile-hover);
 }
 
 .tile:active {
   transform: scale(0.96);
-}
-
-.tile:focus-visible {
-  outline: 3px solid var(--gold);
-  outline-offset: 2px;
 }
 
 .tile__icon {
@@ -214,10 +197,10 @@ body {
   display: block;
 }
 
-/* Latching tiles (musique, ambiance) while playing */
+/* Musique and ambiance tiles: lit while they play. */
 .tile.is-active {
-  border-color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 28%, var(--parchment));
+  border-color: var(--ch);
+  background: color-mix(in srgb, var(--ch) 26%, var(--tile));
 }
 
 .tile.is-active::after {
@@ -228,11 +211,11 @@ body {
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--ch);
   animation: pulse 1.2s ease-in-out infinite;
 }
 
-/* One-shot tiles (son) on click */
+/* Son tiles: a flash on click. */
 .tile.is-fired {
   animation: fired 0.45s ease-out;
 }
@@ -242,8 +225,8 @@ body {
 }
 
 @keyframes fired {
-  0% { background: var(--accent); transform: scale(0.93); }
-  100% { background: var(--parchment); transform: scale(1); }
+  0% { background: var(--ch); transform: scale(0.93); }
+  100% { background: var(--tile); transform: scale(1); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -253,37 +236,43 @@ body {
   }
 }
 
-/* ---- Notices & errors ------------------------------------------------- */
+/* ---- Soundboard notices and errors ------------------------------------ */
 
 .notices:empty {
   display: none;
 }
 
 .notice {
-  margin: 0 0 16px;
-  padding: 10px 14px;
-  border-radius: var(--radius);
-  background: #3b2a12;
-  border: 1px solid var(--gold);
-  color: var(--parchment);
+  margin: 0 0 14px;
+  padding: 8px 12px;
+  border-radius: var(--r);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
 }
 
 .fatal {
-  max-width: 720px;
-  margin: 10vh auto;
-  padding: 24px;
-  background: var(--panel);
-  border: 1px solid var(--danger);
-  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--ev);
+  border-radius: var(--r);
+  padding: 16px 18px;
 }
 
 .fatal h1 {
-  margin-top: 0;
-  font-family: var(--serif);
-  color: var(--danger);
+  margin: 0 0 10px;
+  font-family: var(--f-display);
+  font-size: 30px;
+  line-height: 1.05;
+  font-weight: 700;
+  color: var(--ev);
+}
+
+.fatal ul {
+  margin: 0;
+  padding-left: 20px;
 }
 
 .fatal li {
   margin: 6px 0;
-  font-family: ui-monospace, monospace;
+  font-family: var(--f-num);
+  font-size: 14px;
 }

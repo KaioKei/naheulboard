@@ -1,13 +1,168 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍺</text></svg>" />
-    <title>Naheulboard</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1E2A22">
+<title>Naheulboard — Écran du MJ</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍺</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@500;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Alegreya+Sans+SC:wght@500;700&family=Spline+Sans+Mono:wght@500;600&display=swap">
+</head>
+<body>
+<!--
+  The shell: top bar, tab buttons and one container per view. Two modules fill
+  them in (see src/main.ts):
+    - src/mj/mjScreen.js  → Personnages, Déclencheurs, Journal, Sauvegarde, dialogs
+    - src/ui/App.ts       → Musique (the soundboard) and the sound controls in the bar
+  The ids come from the original GM screen: do not rename them.
+-->
+<div class="wrap">
+  <header class="bar">
+    <div class="brand">
+      <h1>Naheulboard</h1>
+      <p>Écran du MJ · Le Donjon de Naheulbeuk</p>
+    </div>
+    <div class="nav">
+      <nav class="views" aria-label="Vues">
+        <button type="button" data-act="view" data-v="persos" aria-current="true">Personnages</button>
+        <button type="button" data-act="view" data-v="trig" aria-current="false">Déclencheurs</button>
+        <button type="button" data-act="view" data-v="journal" aria-current="false">Journal</button>
+        <button type="button" data-act="view" data-v="musique" aria-current="false">Musique</button>
+        <button type="button" data-act="view" data-v="backup" aria-current="false">Sauvegarde</button>
+      </nav>
+      <div class="bar-right">
+        <!-- Master volume and panic button: mounted here so they stay one click away from every tab. -->
+        <div class="audio-bar" id="audio-bar"></div>
+        <span class="status" id="save-status" aria-live="polite">Enregistré sur cet appareil</span>
+      </div>
+    </div>
+  </header>
+
+  <div id="banner" class="banner" hidden></div>
+
+  <main>
+    <section id="v-persos"></section>
+
+    <section id="v-trig" hidden>
+      <div class="panel search">
+        <label for="q" style="font-family:var(--f-sc);font-weight:700;color:var(--muted)">Ce qui se passe dans la scène</label>
+        <input id="q" type="text" placeholder="Ex. : taverne, elfe, coffre, combat, marchand…" autocomplete="off">
+        <div class="kw" id="kw"></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+          <p class="hint">Clique un déclencheur pour voir la réaction. Coche « a brillé » quand un héros a eu son moment : objectif, tout le monde coché en fin de séance.</p>
+          <button type="button" class="btn small" data-act="spot-reset">Nouvelle séance</button>
+        </div>
+      </div>
+      <div class="tcols" id="tcols"></div>
+    </section>
+
+    <section id="v-journal" hidden>
+      <div class="two">
+        <div class="panel">
+          <h2>Séance en cours</h2>
+          <label for="notes-seance" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Notes de la séance en cours</label>
+          <textarea id="notes-seance" rows="10" placeholder="Ce qui s'est passé, PNJ croisés, promesses faites, butin, blagues à recycler…"></textarea>
+          <div style="display:flex;justify-content:flex-end;margin-top:8px">
+            <button type="button" class="btn primary" data-act="journal-archive">Archiver dans le journal</button>
+          </div>
+        </div>
+        <div class="panel">
+          <h2>Journal de campagne</h2>
+          <div id="journal-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filled by src/ui/App.ts: three columns of pictograms (musiques, ambiances, sons). -->
+    <section id="v-musique" hidden></section>
+
+    <section id="v-backup" hidden>
+      <div class="backup">
+        <div class="panel">
+          <h2>Sur cet appareil</h2>
+          <p>Chaque modification est enregistrée automatiquement dans ce navigateur. Tu retrouves tout en rouvrant la page, à condition d'utiliser le même navigateur sur le même appareil.</p>
+          <p class="hint" id="bk-local"></p>
+        </div>
+        <div class="panel">
+          <h2>Fichier de sauvegarde</h2>
+          <p>Un fichier de sauvegarde te protège si le navigateur efface ses données, et te permet de passer de l'ordinateur à la tablette. Le fichier courant est celui que tu as chargé ou enregistré en dernier : « Sauvegarder » écrit par-dessus.</p>
+          <p class="hint" id="bk-file"></p>
+          <p class="hint" id="bk-export"></p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button type="button" class="btn primary" data-act="save-file">Sauvegarder</button>
+            <button type="button" class="btn" data-act="save-as">Enregistrer sous…</button>
+            <button type="button" class="btn" data-act="open-file" id="open-file" hidden>Charger une sauvegarde</button>
+            <span class="btn filebtn" id="import-wrap">Charger une sauvegarde<input type="file" id="import-file" accept=".json,application/json" aria-label="Charger une sauvegarde"></span>
+          </div>
+          <p class="hint">« Enregistrer sous… » choisit un autre fichier, qui devient le fichier courant. Charger remplace les personnages et le journal actuels, et prend ce fichier comme fichier courant. L'état précédent est gardé de côté une fois : bouton « Annuler le dernier import ».</p>
+          <div><button type="button" class="btn small" data-act="undo-import" id="undo-import" hidden>Annuler le dernier import</button></div>
+        </div>
+        <div class="panel">
+          <h2>Repartir de zéro</h2>
+          <p>Remet l'écran dans son état de départ avec Tiny et Julodion. Sauvegarde d'abord dans un fichier si tu veux garder la campagne en cours. Les sons et les musiques ne sont pas touchés : ils vivent dans public/library.json.</p>
+          <div><button type="button" class="btn" data-act="reset">Réinitialiser l'écran</button></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<dialog id="dlg-hero" aria-labelledby="dh-name">
+  <div class="dlg-head">
+    <div style="min-width:0"><h2 id="dh-name"></h2><p id="dh-sub"></p></div>
+    <button type="button" class="close" data-act="hero-close" aria-label="Fermer la fiche">×</button>
+  </div>
+  <div class="tabs" role="tablist" id="dh-tabs"></div>
+  <div class="dlg-body" id="dh-body"></div>
+</dialog>
+
+<dialog id="dlg-effet" aria-labelledby="eff-t">
+  <form id="form-effet">
+    <h2 id="eff-t">Bonus ou malus</h2>
+    <fieldset><legend>Sur qui ?</legend><div id="eff-cibles" class="cibles"></div></fieldset>
+    <div>
+      <div class="presets" id="eff-presets"></div>
+      <p class="hint" style="margin-top:6px">Modèles maison pour aller vite : ajuste les valeurs selon tes règles.</p>
+    </div>
+    <label class="lbl-col" for="eff-nom">Nom
+      <input id="eff-nom" type="text" required placeholder="Ex. : Empoisonné, Ivre, Béni, Épée enchantée…">
+    </label>
+    <div class="mods" id="eff-mods"></div>
+    <label class="lbl-col" for="eff-note">Note (durée, origine, condition de fin…)
+      <input id="eff-note" type="text" placeholder="Ex. : 3 assauts, jusqu'au prochain repos">
+    </label>
+    <div class="actions">
+      <button type="button" class="btn" data-act="eff-cancel">Annuler</button>
+      <button type="submit" class="btn primary">Appliquer</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="dlg-create" aria-labelledby="cr-t">
+  <div class="dlg-head">
+    <div style="min-width:0"><h2 id="cr-t">Nouveau héros</h2><p id="cr-sub"></p></div>
+    <button type="button" class="close" data-act="cr-close" aria-label="Fermer l'assistant">×</button>
+  </div>
+  <div class="dlg-body" id="cr-body"></div>
+  <div id="cr-foot"></div>
+</dialog>
+
+<dialog id="dlg-confirm" aria-labelledby="cf-t" aria-describedby="cf-msg">
+  <form method="dialog">
+    <h2 id="cf-t">Supprimer ?</h2>
+    <p id="cf-msg"></p>
+    <p class="tip" id="cf-tip" hidden></p>
+    <div class="actions">
+      <button type="submit" value="cancel" class="btn" id="cf-cancel">Annuler</button>
+      <button type="submit" value="ok" class="btn danger-btn" id="cf-ok">Supprimer</button>
+    </div>
+  </form>
+</dialog>
+
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script type="module" src="/src/main.ts"></script>
+</body>
 </html>
